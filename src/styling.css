@@ -1,2 +1,50 @@
 @charset "utf-8";
 
+nav{
+    background-color: #F987C2;
+}
+
+#selectedButton{
+    color: #920d52
+}
+
+/* Media query to remove centering on small screens */
+@media (max-width: 767px) {
+    .absolutecenter {
+        position: static;
+        transform: none;
+    }
+}
+
+/* Media query to remove centering on small screens */
+@media (max-width: 768px) {
+    #preSpacing{
+        display: none;
+    }
+}
+
+/* Media query to remove centering on small screens */
+@media (max-width: 992px) {
+    img{
+        display: block;
+        min-width: 73%;
+        max-width: 85%;
+        margin: auto;
+
+    }
+}
+
+/* Sets Nav Options to Absolute Center */
+.absolutecenter {
+    margin: auto;
+    position: absolute;
+    left: 0; right: 0;
+}
+
+/* Sets the Auto Margin Feature */
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
