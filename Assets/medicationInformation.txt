@@ -1,0 +1,24 @@
+/Assets/medicationCollections/lemsip_Max_Blackcurrant_Sachets.png
+Lemsip Max Cold & Flu - Blackcurrant - 10 Sachets
+4.49
+2
+
+/Assets/medicationCollections/lemsip_Max_Honey_Sachets.png
+Lemsip Max Cold & Flu - Honey & Ginger - 10 Sachets
+5.35
+2
+
+/Assets/medicationCollections/lemsip_Max_All_Capsules.png
+Lemsip Max Cold & Flu - All in One - 16 Capsules
+6.50
+2
+
+/Assets/medicationCollections/lemsip_Max_Capsules.png
+Lemsip Max Cold & Flu - 16 Capsules
+4.50
+2
+
+/Assets/medicationCollections/lemsip_Max_Day_Night_Capsules.png
+Lemsip Max Cold & Flu - Day & Night - 16 Capsules
+5.99
+2

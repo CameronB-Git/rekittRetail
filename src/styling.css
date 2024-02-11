@@ -8,6 +8,7 @@ nav{
     color: #920d52
 }
 
+
 /* Media query to remove centering on small screens */
 @media (max-width: 767px) {
     .absolutecenter {
@@ -47,4 +48,27 @@ nav{
     margin-right: auto;
 }
 
+#productHeader{
+    margin-top: 7%;
+}
+
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    float:right;
+}
+  
+.dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+ul.navbar-nav{
+    font-size: 18px;
+}
+
+#productInformation{
+    max-width: 50%;
+    font-size: 20px;
+}
 
