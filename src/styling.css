@@ -12,8 +12,8 @@ nav{
 /* Media query to remove centering on small screens */
 @media (max-width: 767px) {
     .absolutecenter {
-        position: static;
-        transform: none;
+        margin: auto;
+        left: 0; right: 0;
     }
 }
 
@@ -33,14 +33,37 @@ nav{
         margin: auto;
 
     }
+
+    #productImage{
+        width: 1rem;
+        margin-top: 25%;
+    }
+
+    .productDetails{
+        margin-top: 20%;
+    }
+
+    .brandContainer{
+        margin-right: 50%;
+    }
 }
 
-/* Sets Nav Options to Absolute Center */
-.absolutecenter {
-    margin: auto;
-    position: absolute;
-    left: 0; right: 0;
+@media (min-width: 768px){
+    /* Sets Nav Options to Absolute Center */
+    .absolutecenter {
+        margin: auto;
+        position: absolute;
+        left: 0; right: 0;
+    }
 }
+
+@media (min-width: 993px){
+    .productDetails{
+        overflow:hidden
+    }
+}
+
+
 
 /* Sets the Auto Margin Feature */
 .mx-auto {
@@ -71,4 +94,46 @@ ul.navbar-nav{
     max-width: 50%;
     font-size: 20px;
 }
+
+#addToBasketButton{
+    background-color: #E95EA6;
+    float: right;
+    color: black;
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    border-width: 0.1rem;
+    border-color: black;
+}
+
+#productContainer{
+    width: 60%
+}
+
+.productBox {
+    min-width: 20%;
+    height: 140px;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 35px;
+    border-radius: 1.5rem;
+}
+
+.brandContainer {
+    width: 15rem;
+    height: 10rem;
+    border: 1px solid black;
+
+    margin-top: 35px;
+    border-radius: 1rem;
+    margin: 30px;
+    justify-content: center;
+}
+
+.brandImage{
+    width: 12rem;
+    margin-top: 25%;
+}
+
+
 
