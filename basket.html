@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/src/styling.css" rel="stylesheet">
+    <script type="text/javascript" src="/src/script.js"></script>
+    <script type="text/javascript" src="/src/themeSwitchScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Reckitt - Your Basket</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top py-2">
+        <div class="container-fluid">
+            <div id="name">
+                <a class="navbar-brand text-white mx-auto w-25" href="#">
+                    <img src="/Assets/reckittLogo.svg" width="50%" style="float:left";>
+                </a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"> </span>
+            </button>
+            
+
+            <div class="collapse navbar-collapse absolutecenter" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <!-- Home Nav -->
+                    <li class="nav-item">
+                        <a class="nav-link active m-2" href="/index.html" id="navButton">
+                            <b>Home</b>
+                        </a>
+                    </li> 
+                    <!-- About Us Nav -->
+                    <li class="nav-item">
+                        <a class="nav-link active m-2" href="/about.html" id="navButton">
+                            <b>About Us</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a classs="nav-link active m-2" href="/basket.html"><img src="/Assets/basketIcon.png" width="5%"></a>
+                        
+                    </li>
+                </ul>
+                <button type="button" class="btn p-1" onclick="toggleMode()" style="float: right"; id="btnSwitch">Dark Mode</button>
+            </div>
+            <div class="w-25" id="preSpacing">
+                <pre class="text-white"></pre>
+            </div>
+        </div> 
+    </nav>
+    <!-- Header -->
+    <div class="container text-center" id="productHeader">
+        <h2>Your Basket</h2>
+    </div>
+
+    <div class="container-fluid productBox" id="productContainer">
+        <img src="/Assets/medicationAssets/Lemsip/lemsipProducts/lemsip_Max_Blackcurrant_Sachets.png" width="10%">
+        <h3 class="d-inline">Lemsip Max Blackcurrant - 10 Sachets</h3>
+        <h4 class="d-inline" style="float:right; margin: 12px">£4.98</h4>
+        <a href="" onclick="removeItem()" style="text-decoration: none;">Remove</a>
+    </div>
+
+    <div class="container total" style="float: right;">
+        <h4>Subtotal - £4.98</h4>
+    </div>
+</body>
+</html>
