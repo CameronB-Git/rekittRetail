@@ -8,6 +8,14 @@ nav{
     color: #920d52
 }
 
+@media (min-width: 768px){
+    /* Sets Nav Options to Absolute Center */
+    .absolutecenter {
+        margin: auto;
+        position: absolute;
+        left: 4rem; right: 0;
+    }
+}
 
 /* Media query to remove centering on small screens */
 @media (max-width: 767px) {
@@ -31,7 +39,6 @@ nav{
         min-width: 73%;
         max-width: 85%;
         margin: auto;
-
     }
 
     #productImage{
@@ -46,24 +53,23 @@ nav{
     .brandContainer{
         margin-right: 50%;
     }
-}
-
-@media (min-width: 768px){
-    /* Sets Nav Options to Absolute Center */
-    .absolutecenter {
-        margin: auto;
-        position: absolute;
-        left: 0; right: 0;
+    
+    .productInformation *{
+        width: 85%;
+        font-size: 20px;
     }
 }
 
 @media (min-width: 993px){
-    .productDetails{
-        overflow:hidden
+    .productInformation *{
+        width: 60%;
+        font-size: 20px;
+    }
+
+    .productInformation.ul{
+        width: 80%;
     }
 }
-
-
 
 /* Sets the Auto Margin Feature */
 .mx-auto {
@@ -75,10 +81,9 @@ nav{
     margin-top: 7%;
 }
 
-
 .dropdown:hover>.dropdown-menu {
     display: block;
-    float:right;
+    float: right;
 }
   
 .dropdown>.dropdown-toggle:active {
@@ -90,14 +95,21 @@ ul.navbar-nav{
     font-size: 18px;
 }
 
-#productInformation{
-    max-width: 50%;
-    font-size: 20px;
-}
+
 
 #addToBasketButton{
     background-color: #E95EA6;
     float: right;
+    color: black;
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    border-width: 0.1rem;
+    border-color: black;
+}
+
+.checkoutButton{
+    background-color: #E95EA6;
     color: black;
     width: 10rem;
     height: 2.5rem;
@@ -112,12 +124,60 @@ ul.navbar-nav{
 
 .productBox {
     min-width: 20%;
-    height: 140px;
+    max-width: 50%;
+    height: 150px;
     border: 1px solid black;
-    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     margin-top: 35px;
     border-radius: 1.5rem;
 }
+
+.productImage{
+    width: 9rem;
+}
+
+.productImageLarge{
+    width: 6rem;
+}
+
+.productName{
+    font-size: 24px;
+    vertical-align: top;
+}
+
+div.col-md-10, div.col-md-9 {
+    padding: 0px;
+}
+
+.normalFont{
+    font-size: 22px;
+}
+
+.productPrice{
+    float:right;
+    margin-top: 4.5rem;
+    margin-right: 0.75rem;
+    bottom: 0px;
+}
+
+.subtotalContainer{
+    min-width: 10%;
+    max-width: 12%;
+    height: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 3rem;
+    border-radius: 1.5rem;
+    vertical-align: bottom;
+    float: right;
+    margin-right: 23rem;    
+}
+
+.removeButton{
+    margin-left: 0.5rem;
+}
+
 
 .brandContainer {
     width: 15rem;
@@ -132,8 +192,8 @@ ul.navbar-nav{
 
 .brandImage{
     width: 12rem;
-    margin-top: 25%;
 }
 
-
-
+.optrexImage{
+    width: 9.5rem;
+}
