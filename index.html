@@ -32,19 +32,20 @@
                     <!-- Home Nav -->
                     <li class="nav-item">
                         <a class="nav-link active m-2" href="/index.html" style="text-decoration: none;">
-                            <i class="fa-solid fa-house" style="font-size: 30px;"></i>
+                            <i class="fa-solid fa-house" style="font-size: 30px;" id="selectedButton"></i>
                         </a>
                     </li> 
                     <!-- About Us Nav -->
                     <li class="nav-item">
                         <a class="nav-link active m-2" href="/about.html" style="text-decoration: none;">
-                            <i class="fa-solid fa-circle-info" style="font-size: 30px;"></i>
+                            <i class="fa-solid fa-circle-info" style="font-size: 30px;" id="navButton"></i>
                         </a>
                     </li>
                     <!-- Basket Option -->
                     <li class="nav-item">
                         <a class="nav-link active" href="/basket.html" style="text-decoration: none;">
-                            <i class="fa-solid fa-basket-shopping mt-1 ms-2" style="font-size: 36px;"></i>
+                            <i class="fa-solid fa-basket-shopping mt-1 ms-2" style="font-size: 36px;" id="navButton"></i>
+                            <span class="buttonBadge"></span>
                         </a>
                     </li>
                 </ul>
@@ -58,7 +59,7 @@
     <div class="container mt-5 pt-5">
         <div class="col-md-12 text-center" id="textSize">
             <h1 class="mt-3 text-center"><b>Our Products</b></h1>
-            <div class="row" style="margin-left: 12rem;">   
+            <div class="row brandRow">   
                 <div class="brandContainer d-inline-block">
                     <a href="/src/products/bonjela.html"><img src="/Assets/medicationAssets/Bonjela/bonjela.png" class="brandImage mt-5"></a>
                 </div>
@@ -72,7 +73,7 @@
                 </div>
             </div>
 
-            <div class="row" style="margin-left: 12rem;">
+            <div class="row brandRow">
                 <div class="brandContainer d-inline-block">
                     <a href="/src/products/lemsip.html"><img src="/Assets/medicationAssets/Lemsip/lemsip.png" class="brandImage mb-5"></a>
                 </div>

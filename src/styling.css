@@ -1,13 +1,167 @@
 @charset "utf-8";
 
+/* Nav Related Classes */
 nav{
     background-color: #F987C2;
 }
 
-#selectedButton{
-    color: #920d52
+#navButton{
+    color: #a90041
 }
 
+#selectedButton{
+    color: #212529;
+}
+
+ul.navbar-nav{
+    font-size: 18px;
+}
+
+/* Buttons */
+#addToBasketButton{
+    background-color: #E95EA6;
+    float: right;
+    color: black;
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    border-width: 0.1rem;
+    border-color: black;
+}
+
+.checkoutButton{
+    background-color: #E95EA6;
+    color: black;
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    border-width: 0.1rem;
+    border-color: black;
+}
+
+.removeButton{
+    margin-left: 0.5rem;
+}
+
+/* Containers */
+.brandContainer {
+    width: 15rem;
+    height: 10rem;
+    border: 1px solid black;
+
+    margin-top: 35px;
+    border-radius: 1rem;
+    margin: 30px;
+    justify-content: center;
+}
+
+.productBox {
+    max-width: 50%;
+    height: 150px;
+    border: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 35px;
+    border-radius: 1.5rem;
+}
+
+.subtotalContainer{
+    min-width: 10%;
+    max-width: 12%;
+    height: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 3rem;
+    border-radius: 1.5rem;
+    vertical-align: bottom;
+    float: right;
+    margin-right: 23rem;    
+}
+
+/* Dark/Light Mode */
+[data-bs-theme='dark'] .productBox,
+[data-bs-theme='dark'] .brandContainer{ 
+    border-color: white;
+}
+
+/* General Classes */
+/* Sets the Auto Margin Feature */
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Makes Dropdown Menu Work */
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    float: right;
+}
+
+/* Makes Dropdown Hoverable */
+.dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+#productHeader{
+    margin-top: 7%;
+}
+
+.productImage{
+    width: 9rem;
+}
+
+.productImageLarge{
+    width: 6rem;
+}
+
+.productName{
+    font-size: 24px;
+    vertical-align: top;
+}
+
+.productPrice{
+    float:right;
+    margin-top: 4.5rem;
+    margin-right: 0.75rem;
+    bottom: 0px;
+}
+
+#productContainer{
+    width: 60%
+}
+
+div.col-md-10, div.col-md-9 {
+    padding: 0px;
+}
+
+.normalFont{
+    font-size: 22px;
+}
+
+.brandImage{
+    width: 12rem;
+}
+
+.optrexImage{
+    width: 9.5rem;
+}
+
+/* Testing Classes */
+/* Make the badge float in the top right corner of the button */
+.buttonBadge { 
+    background-color: #F987C2;
+    border-radius: 2px;
+    color: rgb(23, 23, 23);
+   
+    padding: 1px 3px;
+    font-size: 16px;
+    
+    position: absolute; /* Position the badge within the relatively positioned button */
+    top: 0;
+}  
+
+/* Media Queries */
 @media (min-width: 768px){
     /* Sets Nav Options to Absolute Center */
     .absolutecenter {
@@ -30,6 +184,10 @@ nav{
     #preSpacing{
         display: none;
     }
+
+    .brandContainer{
+        margin-right: 10%;
+    }
 }
 
 /* Media query to remove centering on small screens */
@@ -49,14 +207,14 @@ nav{
     .productDetails{
         margin-top: 20%;
     }
-
-    .brandContainer{
-        margin-right: 50%;
-    }
     
     .productInformation *{
         width: 85%;
         font-size: 20px;
+    }
+
+    .brandRow{
+        margin-left: 2rem;
     }
 }
 
@@ -69,131 +227,8 @@ nav{
     .productInformation.ul{
         width: 80%;
     }
-}
 
-/* Sets the Auto Margin Feature */
-.mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#productHeader{
-    margin-top: 7%;
-}
-
-.dropdown:hover>.dropdown-menu {
-    display: block;
-    float: right;
-}
-  
-.dropdown>.dropdown-toggle:active {
-    /*Without this, clicking will make it sticky*/
-    pointer-events: none;
-}
-
-ul.navbar-nav{
-    font-size: 18px;
-}
-
-
-
-#addToBasketButton{
-    background-color: #E95EA6;
-    float: right;
-    color: black;
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 0.6rem;
-    border-width: 0.1rem;
-    border-color: black;
-}
-
-.checkoutButton{
-    background-color: #E95EA6;
-    color: black;
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 0.6rem;
-    border-width: 0.1rem;
-    border-color: black;
-}
-
-#productContainer{
-    width: 60%
-}
-
-.productBox {
-    min-width: 20%;
-    max-width: 50%;
-    height: 150px;
-    border: 1px solid black;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 35px;
-    border-radius: 1.5rem;
-}
-
-.productImage{
-    width: 9rem;
-}
-
-.productImageLarge{
-    width: 6rem;
-}
-
-.productName{
-    font-size: 24px;
-    vertical-align: top;
-}
-
-div.col-md-10, div.col-md-9 {
-    padding: 0px;
-}
-
-.normalFont{
-    font-size: 22px;
-}
-
-.productPrice{
-    float:right;
-    margin-top: 4.5rem;
-    margin-right: 0.75rem;
-    bottom: 0px;
-}
-
-.subtotalContainer{
-    min-width: 10%;
-    max-width: 12%;
-    height: 60px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 3rem;
-    border-radius: 1.5rem;
-    vertical-align: bottom;
-    float: right;
-    margin-right: 23rem;    
-}
-
-.removeButton{
-    margin-left: 0.5rem;
-}
-
-
-.brandContainer {
-    width: 15rem;
-    height: 10rem;
-    border: 1px solid black;
-
-    margin-top: 35px;
-    border-radius: 1rem;
-    margin: 30px;
-    justify-content: center;
-}
-
-.brandImage{
-    width: 12rem;
-}
-
-.optrexImage{
-    width: 9.5rem;
+    .brandRow{
+        margin-left: 12rem;
+    }
 }

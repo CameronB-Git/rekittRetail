@@ -164,13 +164,13 @@ function displayProductsInBasket() {
             removeButton.className = 'removeButton d-inline';
             removeButton.href = "#";
             removeButton.textContent = 'Remove';
-            //removeButton.onclick = removeItem();
+            removeButton.id = div.id;
+            //removeButton.onclick = removeItem(removeButton.id);
             target.appendChild(removeButton);  
 
             totalPrice = totalPrice + (parseFloat(productEntries[selectedProductIndex[i]].productPrice));
         }
 
-        
 
         // Add Subtotal Information 
         var target = document.querySelector('#div0')
@@ -185,7 +185,7 @@ function displayProductsInBasket() {
 
         // Add "Checkout Now" Button
         var checkoutButton = document.createElement('button');
-        checkoutButton.className = 'btn btn-secondary checkoutButton';
+        checkoutButton.className = 'btn btn-secondary checkoutButton mb-5';
         checkoutButton.innerHTML = "<b>Checkout Now</b>";
         subtotalDiv.appendChild(checkoutButton)
     } else {
@@ -204,6 +204,7 @@ function addItemToBasket() {
 
         items.push(selectedProductIndex);
         localStorage.setItem("item", JSON.stringify(items));
+        alert(`Added ${productEntries[selectedProductIndex].productName} to your basket!`)
     } else {
         console.error("No product selected.");
     }
@@ -216,7 +217,7 @@ function getItemIndex() {
     return JSON.parse(itemIndex);
 }
 
-function removeItem(){
-    div.id.remove();
+function removeItem(id){
+    var itemToRemove = document.querySelector(`div${id}`)
+    itemToRemove.remove();
 }
-
