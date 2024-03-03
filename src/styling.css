@@ -9,43 +9,47 @@ nav{
     color: #a90041
 }
 
-#selectedButton{
-    color: #212529;
-}
-
 ul.navbar-nav{
     font-size: 18px;
 }
 
-.darkText{
+#selectedButton, .darkText{
     color: #212529;
 }
 
-/* Buttons */
-#addToBasketButton{
+/* !! Font Sizes !! */
+:root {
+    --font-size-small: 18px;
+    --font-size-medium: 22px;
+    --font-size-large: 28px;
+}
+  
+.fontSize-small {
+    font-size: var(--font-size-small);
+}
+
+.fontSize-medium {
+    font-size: var(--font-size-medium);
+}
+
+.fontSize-large {
+    font-size: var(--font-size-large);
+}
+
+.buttonTemplate{
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    border-width: 0.1rem;
+    border-color: black;
     background-color: #E95EA6;
+    color: black;
+}
+
+.floatRight{
     float: right;
-    color: black;
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 0.6rem;
-    border-width: 0.1rem;
-    border-color: black;
 }
 
-.checkoutButton{
-    background-color: #E95EA6;
-    color: black;
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 0.6rem;
-    border-width: 0.1rem;
-    border-color: black;
-}
-
-.removeButton{
-    margin-left: 0.5rem;
-}
 
 /* Containers */
 .brandContainer {
@@ -72,14 +76,9 @@ ul.navbar-nav{
 .subtotalContainer{
     min-width: 15%;
     max-width: 12%;
-    height: 60px;
-    padding-top: 15px;
-    padding-bottom: 15px;
     margin-top: 3rem;
-    border-radius: 1.5rem;
-    vertical-align: bottom;
-    float: right;
-    margin-right: 20rem;   
+    border-radius: 1rem;
+    margin-right: 22.5rem;   
 }
 
 .specialOffersContainer{
@@ -93,9 +92,13 @@ ul.navbar-nav{
     max-width: 85%;
     height: 2rem; 
     border: 0.08rem solid black;
-    margin-right: 10rem;
+    margin-right: 2.5rem;
     background-color: #F987C2;
     color: #212529;
+}
+
+.noTextDecor:hover{
+    color: #ff5db1;
 }
 
 /* Dark/Light Mode */
@@ -107,9 +110,14 @@ ul.navbar-nav{
 }
 
 [data-bs-theme='dark'] footer{
-    background-color: #323232;
+    background-color: #32373b;
 }
 
+[data-bs-theme='dark'] .btn-info{
+    background-color: #212529;
+    color: #ffffff;
+}
+ 
 /* Checkout Page */
 .required-asterisk {
     color: red;
@@ -118,20 +126,41 @@ ul.navbar-nav{
 
 /* Sets Styling for Input Fields */
 input.form-control{
-    width: 100%;
-    border-width: 1px;
-    border-color: #FF8552 ;
-    margin-top: 5px  /* Margin may cause phone number entry to be weird */
+    width: 100%; /* Change width to 100% to span across the container */
+    margin-top: 5px;
+    border-width: 0 0 0.15rem;
+    border-color: #F987C2;
+}
+
+input.form-control:focus{
+    border-color: #ff5db1;
+    box-shadow: 0 0 0 0.02rem #ff5db1;
 }
 
 label.form-control{
     margin-bottom: 0px;
 }
 
+.btn-info{
+    background: transparent;
+    border-color: #ff5db1 ;
+    align-items: center;
+    width: 50%;
+    letter-spacing: 0.1rem;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+.btn-info:hover{
+    transform: scale(1.02);
+    background-color: #FF8552;
+    color: #ffffff;
+}
+
 /* General Classes */
 /* Sets the Auto Margin Feature */
 .mx-auto {
-    margin-left: auto;
+    margin-left: auto;  
     margin-right: auto;
 }
 
@@ -170,11 +199,7 @@ label.form-control{
 div.col-md-10, div.col-md-9 {
     padding: 0px;
 }
-
-.normalFont{
-    font-size: 22px;
-}
-
+    
 .brandImage{
     width: 12rem;
 }
@@ -226,36 +251,10 @@ footer{
     margin-top: 5.5rem;
 }
 
-
-.noTextDecor:hover{
-    color: #ff5db1;
-}
-
-
 /* Testing Classes */
-/* Make the badge float in the top right corner of the button */
-.buttonBadge { 
-    background-color: #F987C2;
-    border-radius: 2px;
-    color: rgb(23, 23, 23);
-   
-    padding: 1px 3px;
-    font-size: 16px;
-    
-    position: absolute; /* Position the badge within the relatively positioned button */
-    top: 0;
-}  
+    /* !!! Currently Empty !!! */
 
-
-/* Media query to remove centering on small screens */
-@media (max-width: 767px) {
-    .absolutecenter {
-        margin: auto;
-        left: 0; right: 0;
-    }
-}
-
-/* Media query to remove centering on small screens */
+/* Media query: Max Width 768px (Mobile Screens) */
 @media (max-width: 768px) {
     #preSpacing{
         display: none;
@@ -287,7 +286,7 @@ footer{
 
     .productName{
         font-size: 18px;
-        
+
     }
 
     .subtotalContainer{
@@ -326,14 +325,36 @@ footer{
     }
 
     .specialOffersContainer{
-        max-width: 60%;
+        max-width: 85%;
+        height: 17.5rem;
     }
     
     .offerContainer{
-        max-width: 85%;
-        margin-right: 10rem;
-        background-color: #F987C2;
+        max-width: 95%;
+        margin-left: 0.5rem;
     }
+
+    .specialOffersContainer .row{
+        margin-top: 1.75rem !important;
+    }
+
+    .fontSize-medium{
+        font-size: 18px;
+    }
+
+    .fontSize-large{
+        font-size: 22px;
+    }
+
+    h4{
+        margin-top: 0.25rem;
+    }
+
+    .paydayDeals{
+       margin-top: 0.5rem; 
+    }
+
+    
 }
 
 /* Media Queries */
@@ -344,7 +365,6 @@ footer{
         position: absolute;
         left: 4rem; right: 0;
     }
-    
 }
 
 /* Media query to remove centering on small screens */

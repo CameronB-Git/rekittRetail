@@ -185,7 +185,7 @@ function displayProductsInBasket() {
 
         // Add "Checkout Now" Button
         var checkoutButton = document.createElement('button');
-        checkoutButton.className = 'btn btn-secondary checkoutButton mb-5';
+        checkoutButton.className = 'btn btn-secondary buttonTemplate mb-5';
         checkoutButton.innerHTML = "<b>Checkout Now</b>";
         checkoutButton.onclick = function() {
             window.location.href = "/checkout.html";
