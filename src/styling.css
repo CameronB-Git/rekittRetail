@@ -17,6 +17,10 @@ ul.navbar-nav{
     font-size: 18px;
 }
 
+.darkText{
+    color: #212529;
+}
+
 /* Buttons */
 #addToBasketButton{
     background-color: #E95EA6;
@@ -66,7 +70,7 @@ ul.navbar-nav{
 }
 
 .subtotalContainer{
-    min-width: 10%;
+    min-width: 15%;
     max-width: 12%;
     height: 60px;
     padding-top: 15px;
@@ -75,13 +79,53 @@ ul.navbar-nav{
     border-radius: 1.5rem;
     vertical-align: bottom;
     float: right;
-    margin-right: 23rem;    
+    margin-right: 20rem;   
+}
+
+.specialOffersContainer{
+    max-width: 60%;
+    height: 15rem;
+    border: 1px solid black;
+    border-radius: 1.5rem;
+}
+
+.offerContainer{
+    max-width: 85%;
+    height: 2rem; 
+    border: 0.08rem solid black;
+    margin-right: 10rem;
+    background-color: #F987C2;
+    color: #212529;
 }
 
 /* Dark/Light Mode */
 [data-bs-theme='dark'] .productBox,
-[data-bs-theme='dark'] .brandContainer{ 
+[data-bs-theme='dark'] .brandContainer,
+[data-bs-theme='dark'] .specialOffersContainer, 
+[data-bs-theme='dark'] .offerContainer{ 
     border-color: white;
+}
+
+[data-bs-theme='dark'] footer{
+    background-color: #323232;
+}
+
+/* Checkout Page */
+.required-asterisk {
+    color: red;
+    margin-left: 4px; /* Add spacing between label and asterisk if needed */
+}
+
+/* Sets Styling for Input Fields */
+input.form-control{
+    width: 100%;
+    border-width: 1px;
+    border-color: #FF8552 ;
+    margin-top: 5px  /* Margin may cause phone number entry to be weird */
+}
+
+label.form-control{
+    margin-bottom: 0px;
 }
 
 /* General Classes */
@@ -105,14 +149,6 @@ ul.navbar-nav{
 
 #productHeader{
     margin-top: 7%;
-}
-
-.productImage{
-    width: 9rem;
-}
-
-.productImageLarge{
-    width: 6rem;
 }
 
 .productName{
@@ -147,6 +183,55 @@ div.col-md-10, div.col-md-9 {
     width: 9.5rem;
 }
 
+.productImage{
+    width: 6.25rem;
+}
+
+.productImageLarge{
+    width: 9rem;
+}
+
+/* No Text Decoration */
+.noTextDecor{
+    text-decoration: none;
+    color: #212529;
+}
+
+/* CSS for Footer */
+footer{
+    width: 100%;
+    height: 15rem;
+    background-color: #efefef;
+    bottom: 0px;
+    position: relative;
+}
+
+.footerLogo{
+    min-width: 10%;
+    margin-left: 5.5rem;
+    margin-top: 2rem;
+
+}
+
+.copyrightStatement{
+    padding-top: 10rem;
+    margin-left: 2.3rem;
+}
+
+.quickLinks{
+    margin-top: 5rem;
+}
+
+.socialLinks{
+    margin-top: 5.5rem;
+}
+
+
+.noTextDecor:hover{
+    color: #ff5db1;
+}
+
+
 /* Testing Classes */
 /* Make the badge float in the top right corner of the button */
 .buttonBadge { 
@@ -161,15 +246,6 @@ div.col-md-10, div.col-md-9 {
     top: 0;
 }  
 
-/* Media Queries */
-@media (min-width: 768px){
-    /* Sets Nav Options to Absolute Center */
-    .absolutecenter {
-        margin: auto;
-        position: absolute;
-        left: 4rem; right: 0;
-    }
-}
 
 /* Media query to remove centering on small screens */
 @media (max-width: 767px) {
@@ -184,10 +260,91 @@ div.col-md-10, div.col-md-9 {
     #preSpacing{
         display: none;
     }
-
+    
     .brandContainer{
         margin-right: 10%;
     }
+    
+    .productBox {
+        max-width: 85%;
+        height: 200px;
+        border: 1px solid black;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 35px;
+        border-radius: 1.5rem;
+    }
+    
+    .productImage{
+        width: 4rem;
+        min-width: 1rem;
+    }
+
+    .productImageLarge{
+        width: 8rem;
+        min-width: 1rem;
+    }
+
+    .productName{
+        font-size: 18px;
+        
+    }
+
+    .subtotalContainer{
+        margin-right: 10rem;
+    }
+
+    .productPrice{
+        margin-top: 2.5rem;
+    }
+
+    /* CSS for Footer */
+    footer{
+        width: 100%;
+        height: 35rem;
+        background-color: #efefef;
+        bottom: 0px;
+    }
+
+    .footerLogo{
+        min-width: 10%;
+        margin-left: 5.5rem;
+        margin-top: 1rem;
+    }
+
+    .copyrightStatement{
+        margin-left: 2.75rem;
+        max-width: 15rem;
+    }
+
+    .quickLinks{
+        margin-top: 2.5rem;
+    }
+    
+    .socialLinks{
+        margin-top: 4rem;
+    }
+
+    .specialOffersContainer{
+        max-width: 60%;
+    }
+    
+    .offerContainer{
+        max-width: 85%;
+        margin-right: 10rem;
+        background-color: #F987C2;
+    }
+}
+
+/* Media Queries */
+@media (min-width: 768px){
+    /* Sets Nav Options to Absolute Center */
+    .absolutecenter {
+        margin: auto;
+        position: absolute;
+        left: 4rem; right: 0;
+    }
+    
 }
 
 /* Media query to remove centering on small screens */

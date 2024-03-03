@@ -116,12 +116,12 @@ function displayProductsInBasket() {
             target.appendChild(divRow);
             
             if ((productEntries[selectedProductIndex[i]].productName).includes("Capsules")){
-                imageColumn = 'col-md-3';
-                textColumn = 'col-md-9';
+                imageColumn = 'col-sm-3';
+                textColumn = 'col-sm-9';
             }
             else{
-                imageColumn = 'col-md-2';
-                textColumn = 'col-md-10';
+                imageColumn = 'col-sm-2';
+                textColumn = 'col-sm-10';
             }
 
             // Create Two Divs inside of DivRow
@@ -138,10 +138,10 @@ function displayProductsInBasket() {
             var target = document.querySelector(`.${imageColumn}`);
             var newImg = document.createElement('img');
             if ((productEntries[selectedProductIndex[i]].productName).includes("Capsules")){
-                newImg.className = 'productImage';
+                newImg.className = 'productImageLarge';
             }
             else{
-                newImg.className = 'productImageLarge';
+                newImg.className = 'productImage';
             }
             newImg.src = productEntries[selectedProductIndex[i]].productImage;
             target.appendChild(newImg);
@@ -187,6 +187,9 @@ function displayProductsInBasket() {
         var checkoutButton = document.createElement('button');
         checkoutButton.className = 'btn btn-secondary checkoutButton mb-5';
         checkoutButton.innerHTML = "<b>Checkout Now</b>";
+        checkoutButton.onclick = function() {
+            window.location.href = "/checkout.html";
+        }
         subtotalDiv.appendChild(checkoutButton)
     } else {
         // Displays if user has Zero(0) Products in Basket
