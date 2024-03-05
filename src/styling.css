@@ -1,34 +1,412 @@
 @charset "utf-8";
 
+/* Nav Related Classes */
 nav{
     background-color: #F987C2;
 }
 
-#selectedButton{
-    color: #920d52
+#navButton{
+    color: #a90041
 }
 
+ul.navbar-nav{
+    font-size: 18px;
+}
+
+#selectedButton, .darkText{
+    color: #212529;
+}
+
+/* !! Font Sizes !! */
+:root {
+    --font-size-small: 18px;
+    --font-size-medium: 22px;
+    --font-size-large: 28px;
+    --hoverColor: #ff5db1;
+}
+  
+.fontSize-small {
+    font-size: var(--font-size-small);
+}
+
+.fontSize-medium {
+    font-size: var(--font-size-medium);
+}
+
+.fontSize-large {
+    font-size: var(--font-size-large);
+}
+
+.buttonTemplate{
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    border-width: 0.1rem;
+    border-color: black;
+    background-color: #E95EA6;
+    color: black;
+}
+
+.mt-10{
+    margin-top: 10%;
+}
+
+.floatRight{
+    float: right;
+}
+
+
+/* Containers */
+.brandContainer {
+    width: 15rem;
+    height: 10rem;
+    border: 1px solid black;
+
+    margin-top: 35px;
+    border-radius: 1rem;
+    margin: 30px;
+    justify-content: center;
+}
+
+.productBox {
+    max-width: 50%;
+    height: 150px;
+    border: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 35px;
+    border-radius: 1.5rem;
+}
+
+.subtotalContainer{
+    min-width: 15%;
+    max-width: 12%;
+    margin-top: 3rem;
+    border-radius: 1rem;
+    margin-right: 22.5rem;   
+}
+
+.specialOffersContainer{
+    max-width: 60%;
+    height: 15rem;
+    border: 1px solid black;
+    border-radius: 1.5rem;
+}
+
+.offerContainer{
+    max-width: 85%;
+    height: 2rem; 
+    border: 0.08rem solid black;
+    margin-right: 2.5rem;
+    background-color: #F987C2;
+    color: #212529;
+}
+
+.noTextDecor:hover{
+    color: var(--hoverColor);
+}
+
+/* Dark/Light Mode */
+[data-bs-theme='dark'] .productBox,
+[data-bs-theme='dark'] .brandContainer,
+[data-bs-theme='dark'] .specialOffersContainer, 
+[data-bs-theme='dark'] .offerContainer{ 
+    border-color: white;
+}
+
+[data-bs-theme='dark'] footer{
+    background-color: #32373b;
+}
+
+[data-bs-theme='dark'] .btn-info{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+[data-bs-theme='dark'] .dropup,
+[data-bs-theme='dark'] .quickLinks a,
+[data-bs-theme='dark'] .socialLinks i{
+    color: #ffffff;
+}
+
+[data-bs-theme='dark'] .quickLinks a:hover,
+[data-be-theme='dark'] .socialLinks i:hover{
+    color: var(--hoverColor);   
+}
+
+
+ 
+/* Checkout Page */
+.required-asterisk {
+    color: red;
+    margin-left: 4px; /* Add spacing between label and asterisk if needed */
+}
+
+/* Sets Styling for Input Fields */
+input.form-control{
+    width: 100%; /* Change width to 100% to span across the container */
+    margin-top: 5px;
+    border-width: 0 0 0.1rem;
+    border-color: #F987C2;
+    border-radius: 0px;
+}
+
+input.form-control:focus{
+    border-color: #ff5db1;
+    box-shadow: 0 0 0 0.01rem #ff5db1;
+    border-radius: 4px;
+}
+
+label.form-control{
+    margin-bottom: 0px;
+}
+
+.btn-info{
+    background: transparent;
+    border-color: #ff5db1 ;
+    align-items: center;
+    width: 50%;
+    letter-spacing: 0.1rem;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+.btn-info:hover{
+    transform: scale(1.02);
+    background-color: #FF8552;
+    color: #ffffff;
+}
+
+/* General Classes */
+/* Sets the Auto Margin Feature */
+.mx-auto {
+    margin-left: auto;  
+    margin-right: auto;
+}
+
+/* Makes Dropdown Menu Work */
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    float: right;
+}
+
+/* Makes Dropup Menu Work */
+.dropup:hover>.dropup-menu {
+    display: block;
+    float: right;
+}
+
+.dropup{
+    width: 10rem;
+    border-radius: 0.4rem;
+    border-color: #F987C2;
+    background-color: transparent;
+    color: black;   
+}
+
+/* Makes Dropdown Hoverable */
+.dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+#productHeader{
+    margin-top: 7%;
+}
+
+.productName{
+    font-size: 24px;
+    vertical-align: top;
+}
+
+.productPrice{
+    float:right;
+    margin-top: 4.5rem;
+    margin-right: 0.75rem;
+    bottom: 0px;
+}
+
+#productContainer{
+    width: 60%
+}
+
+div.col-md-10, div.col-md-9 {
+    padding: 0px;
+}
+    
+.brandImage{
+    width: 12rem;
+}
+
+.optrexImage{
+    width: 9.5rem;
+}
+
+.productImage{
+    width: 6.25rem;
+}
+
+.productImageLarge{
+    width: 9rem;
+}
+
+/* No Text Decoration */
+.noTextDecor{
+    text-decoration: none;
+    color: #212529;
+}
+
+/* CSS for Footer */
+footer{
+    width: 100%;
+    height: 15rem;
+    background-color: #efefef;
+    bottom: 0px;
+    position: relative;
+}
+
+.footerLogo{
+    min-width: 10%;
+    margin-left: 5.5rem;
+    margin-top: 2rem;
+
+}
+
+.copyrightStatement{
+    padding-top: 10rem;
+    margin-left: 2.3rem;
+}
+
+.quickLinks{
+    margin-top: 5rem;
+}
+
+.socialLinks{
+    margin-top: 5.5rem;
+}
+
+form label{
+    margin-top: 0.8rem;
+}
+
+
+/* Testing Classes */
+    /* !!! Currently Empty !!! */
+
+/* Media query: Max Width 768px (Mobile Screens) */
+@media (max-width: 768px) {
+    #preSpacing{
+        display: none;
+    }
+    
+    .brandContainer{
+        margin-right: 10%;
+    }
+    
+    .productBox {
+        max-width: 85%;
+        height: 200px;
+        border: 1px solid black;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 35px;
+        border-radius: 1.5rem;
+    }
+    
+    .productImage{
+        width: 4rem;
+        min-width: 1rem;
+    }
+
+    .productImageLarge{
+        width: 8rem;
+        min-width: 1rem;
+    }
+
+    .productName{
+        font-size: 18px;
+
+    }
+
+    .subtotalContainer{
+        margin-right: 10rem;
+    }
+
+    .productPrice{
+        margin-top: 2.5rem;
+    }
+
+    /* CSS for Footer */
+    footer{
+        width: 100%;
+        height: 35rem;
+        background-color: #efefef;
+        bottom: 0px;
+    }
+
+    .footerLogo{
+        min-width: 10%;
+        margin-left: 5.5rem;
+        margin-top: 1rem;
+    }
+
+    .copyrightStatement{
+        margin-left: 2.75rem;
+        max-width: 15rem;
+    }
+
+    .quickLinks{
+        margin-top: 2.5rem;
+    }
+    
+    .socialLinks{
+        margin-top: 4rem;
+    }
+
+    .specialOffersContainer{
+        max-width: 85%;
+        height: 17.5rem;
+    }
+    
+    .offerContainer{
+        max-width: 95%;
+        margin-left: 0.5rem;
+    }
+
+    .specialOffersContainer .row{
+        margin-top: 1.75rem !important;
+    }
+
+    .fontSize-medium{
+        font-size: 18px;
+    }
+
+    .fontSize-large{
+        font-size: 22px;
+    }
+
+    h4{
+        margin-top: 0.25rem;
+    }
+
+    .paydayDeals{
+       margin-top: 0.5rem; 
+    }
+
+    form label{
+        margin-top: 1.75rem;
+    }
+
+    
+}
+
+/* Media Queries */
 @media (min-width: 768px){
     /* Sets Nav Options to Absolute Center */
     .absolutecenter {
         margin: auto;
         position: absolute;
         left: 4rem; right: 0;
-    }
-}
-
-/* Media query to remove centering on small screens */
-@media (max-width: 767px) {
-    .absolutecenter {
-        margin: auto;
-        left: 0; right: 0;
-    }
-}
-
-/* Media query to remove centering on small screens */
-@media (max-width: 768px) {
-    #preSpacing{
-        display: none;
     }
 }
 
@@ -49,14 +427,14 @@ nav{
     .productDetails{
         margin-top: 20%;
     }
-
-    .brandContainer{
-        margin-right: 50%;
-    }
     
     .productInformation *{
         width: 85%;
         font-size: 20px;
+    }
+
+    .brandRow{
+        margin-left: 2rem;
     }
 }
 
@@ -69,131 +447,8 @@ nav{
     .productInformation.ul{
         width: 80%;
     }
-}
 
-/* Sets the Auto Margin Feature */
-.mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#productHeader{
-    margin-top: 7%;
-}
-
-.dropdown:hover>.dropdown-menu {
-    display: block;
-    float: right;
-}
-  
-.dropdown>.dropdown-toggle:active {
-    /*Without this, clicking will make it sticky*/
-    pointer-events: none;
-}
-
-ul.navbar-nav{
-    font-size: 18px;
-}
-
-
-
-#addToBasketButton{
-    background-color: #E95EA6;
-    float: right;
-    color: black;
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 0.6rem;
-    border-width: 0.1rem;
-    border-color: black;
-}
-
-.checkoutButton{
-    background-color: #E95EA6;
-    color: black;
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 0.6rem;
-    border-width: 0.1rem;
-    border-color: black;
-}
-
-#productContainer{
-    width: 60%
-}
-
-.productBox {
-    min-width: 20%;
-    max-width: 50%;
-    height: 150px;
-    border: 1px solid black;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 35px;
-    border-radius: 1.5rem;
-}
-
-.productImage{
-    width: 9rem;
-}
-
-.productImageLarge{
-    width: 6rem;
-}
-
-.productName{
-    font-size: 24px;
-    vertical-align: top;
-}
-
-div.col-md-10, div.col-md-9 {
-    padding: 0px;
-}
-
-.normalFont{
-    font-size: 22px;
-}
-
-.productPrice{
-    float:right;
-    margin-top: 4.5rem;
-    margin-right: 0.75rem;
-    bottom: 0px;
-}
-
-.subtotalContainer{
-    min-width: 10%;
-    max-width: 12%;
-    height: 60px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 3rem;
-    border-radius: 1.5rem;
-    vertical-align: bottom;
-    float: right;
-    margin-right: 23rem;    
-}
-
-.removeButton{
-    margin-left: 0.5rem;
-}
-
-
-.brandContainer {
-    width: 15rem;
-    height: 10rem;
-    border: 1px solid black;
-
-    margin-top: 35px;
-    border-radius: 1rem;
-    margin: 30px;
-    justify-content: center;
-}
-
-.brandImage{
-    width: 12rem;
-}
-
-.optrexImage{
-    width: 9.5rem;
+    .brandRow{
+        margin-left: 12rem;
+    }
 }

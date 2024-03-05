@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function displayProduct(product, index) {
         var url = window.location.pathname;
         var filename = url.substring(url.lastIndexOf('/')+1);
-        if (filename != "basket.html"){
+        if (filename != "basket.html" && filename != "billingInformation.html"){
             // Update Product Image
             const imageElement = document.getElementById('productImage');
             imageElement.src = product.productImage;
@@ -116,12 +116,12 @@ function displayProductsInBasket() {
             target.appendChild(divRow);
             
             if ((productEntries[selectedProductIndex[i]].productName).includes("Capsules")){
-                imageColumn = 'col-md-3';
-                textColumn = 'col-md-9';
+                imageColumn = 'col-sm-3';
+                textColumn = 'col-sm-9';
             }
             else{
-                imageColumn = 'col-md-2';
-                textColumn = 'col-md-10';
+                imageColumn = 'col-sm-2';
+                textColumn = 'col-sm-10';
             }
 
             // Create Two Divs inside of DivRow
@@ -138,10 +138,10 @@ function displayProductsInBasket() {
             var target = document.querySelector(`.${imageColumn}`);
             var newImg = document.createElement('img');
             if ((productEntries[selectedProductIndex[i]].productName).includes("Capsules")){
-                newImg.className = 'productImage';
+                newImg.className = 'productImageLarge';
             }
             else{
-                newImg.className = 'productImageLarge';
+                newImg.className = 'productImage';
             }
             newImg.src = productEntries[selectedProductIndex[i]].productImage;
             target.appendChild(newImg);
@@ -164,13 +164,13 @@ function displayProductsInBasket() {
             removeButton.className = 'removeButton d-inline';
             removeButton.href = "#";
             removeButton.textContent = 'Remove';
-            //removeButton.onclick = removeItem();
+            removeButton.id = div.id;
+            //removeButton.onclick = removeItem(removeButton.id);
             target.appendChild(removeButton);  
 
             totalPrice = totalPrice + (parseFloat(productEntries[selectedProductIndex[i]].productPrice));
         }
 
-        
 
         // Add Subtotal Information 
         var target = document.querySelector('#div0')
@@ -185,8 +185,11 @@ function displayProductsInBasket() {
 
         // Add "Checkout Now" Button
         var checkoutButton = document.createElement('button');
-        checkoutButton.className = 'btn btn-secondary checkoutButton';
+        checkoutButton.className = 'btn btn-secondary buttonTemplate mb-5';
         checkoutButton.innerHTML = "<b>Checkout Now</b>";
+        checkoutButton.onclick = function() {
+            window.location.href = "/checkout.html";
+        }
         subtotalDiv.appendChild(checkoutButton)
     } else {
         // Displays if user has Zero(0) Products in Basket
@@ -204,6 +207,7 @@ function addItemToBasket() {
 
         items.push(selectedProductIndex);
         localStorage.setItem("item", JSON.stringify(items));
+        alert(`Added ${productEntries[selectedProductIndex].productName} to your basket!`)
     } else {
         console.error("No product selected.");
     }
@@ -216,7 +220,9 @@ function getItemIndex() {
     return JSON.parse(itemIndex);
 }
 
-function removeItem(){
-    div.id.remove();
+function removeItem(id){
+    var itemToRemove = document.querySelector(`div${id}`)
+    itemToRemove.remove();
 }
+
 

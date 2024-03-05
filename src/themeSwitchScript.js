@@ -21,23 +21,23 @@ function toggleMode(){
 
 // Loads the mode from local storage
 function loadMode(){
-var mode = localStorage.getItem("mode"); // Gets the mode from local storage
-if (mode == "Light"){
-    document.documentElement.setAttribute('data-bs-theme','light') // If mode is Light, set theme to Light
-    var text = document.getElementById("btnSwitch");
-    text.textContent = "Dark Mode"; // Change button text to "Dark Mode"
-}
-else{
-    document.documentElement.setAttribute('data-bs-theme','dark') // If mode is Dark, set theme to Dark
-    var text = document.getElementById("btnSwitch");
-    text.textContent = "Light Mode"; // Change button text to "Light Mode"
-}
+    var mode = localStorage.getItem("mode"); // Gets the mode from local storage
+    if (mode == "Light"){
+        document.documentElement.setAttribute('data-bs-theme','light') // If mode is Light, set theme to Light
+        var text = document.getElementById("btnSwitch");
+        text.textContent = "Dark Mode"; // Change button text to "Dark Mode"
+    }
+    else{
+        document.documentElement.setAttribute('data-bs-theme','dark') // If mode is Dark, set theme to Dark
+        var text = document.getElementById("btnSwitch");
+        text.textContent = "Light Mode"; // Change button text to "Light Mode"
+    }
 }
 
 // Collapses the Burger Menu
 function collapseMenu(){
-if (document.documentElement.clientWidth < 992){
-    const navbar = document.getElementById("navbarNav");
-    navbar.setAttribute('class', 'navbar-collapse collapse')
-}
+    if (document.documentElement.clientWidth < 992){
+        const navbar = document.getElementById("navbarNav");
+        navbar.setAttribute('class', 'navbar-collapse collapse')
+    }
 }

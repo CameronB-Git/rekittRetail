@@ -11,9 +11,9 @@
     <script type="text/javascript" src="/src/script.js"></script>
     <script type="text/javascript" src="/src/themeSwitchScript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Homepage</title>
+    <title>Home | Reckitt</title>
 </head>
-<body>
+<body onload="loadMode()">
     <nav class="navbar navbar-expand-md fixed-top py-2">
         <div class="container-fluid">
             <div id="name">
@@ -32,19 +32,20 @@
                     <!-- Home Nav -->
                     <li class="nav-item">
                         <a class="nav-link active m-2" href="/index.html" style="text-decoration: none;">
-                            <i class="fa-solid fa-house" style="font-size: 30px;"></i>
+                            <i class="fa-solid fa-house" style="font-size: 30px;" id="selectedButton"></i>
                         </a>
                     </li> 
                     <!-- About Us Nav -->
                     <li class="nav-item">
                         <a class="nav-link active m-2" href="/about.html" style="text-decoration: none;">
-                            <i class="fa-solid fa-circle-info" style="font-size: 30px;"></i>
+                            <i class="fa-solid fa-circle-info" style="font-size: 30px;" id="navButton"></i>
                         </a>
                     </li>
                     <!-- Basket Option -->
                     <li class="nav-item">
                         <a class="nav-link active" href="/basket.html" style="text-decoration: none;">
-                            <i class="fa-solid fa-basket-shopping mt-1 ms-2" style="font-size: 36px;"></i>
+                            <i class="fa-solid fa-basket-shopping mt-1 ms-2" style="font-size: 36px;" id="navButton"></i>
+                            <span class="buttonBadge"></span>
                         </a>
                     </li>
                 </ul>
@@ -55,10 +56,37 @@
             </div>      
         </div>
     </nav>
-    <div class="container mt-5 pt-5">
+    <br><br>
+    <!-- Container for Special Offers -->
+    <div class="container-fluid mt-5 specialOffersContainer">
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="container text-center offerContainer">
+                    <a href="/src/products/gavison.html" class="darkText" style="text-decoration: none;">
+                        <h4 class="fontSize-medium">Save 20% on Gaviscon</h4>
+                    </a>
+                </div>
+                <div class="container text-center offerContainer mt-3">
+                    <h4 class="fontSize-medium">Free Delivery on orders £15+</h4>
+                </div>
+                <div class="container text-center offerContainer mt-3">
+                    <h4 class="fontSize-medium">Save £10 on orders over £25!</h4>
+                </div>
+            </div>  
+            <div class="col-md-6 ps-5 paydayDeals">
+                <h2 class="ms-5 fontSize-large">Payday</h2>
+                <h2 class="ps-5 ms-5 fontSize-large">Deals!</h2>
+                <h3 class="mt-3 fontSize-large">Hurry, offer ends soon!</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Container for Reckitt Products -->
+    <div class="container mt-5 mb-5">
         <div class="col-md-12 text-center" id="textSize">
             <h1 class="mt-3 text-center"><b>Our Products</b></h1>
-            <div class="row" style="margin-left: 12rem;">   
+            <div class="row brandRow">   
                 <div class="brandContainer d-inline-block">
                     <a href="/src/products/bonjela.html"><img src="/Assets/medicationAssets/Bonjela/bonjela.png" class="brandImage mt-5"></a>
                 </div>
@@ -66,13 +94,12 @@
                 <div class="brandContainer d-inline-block">
                     <a href="/src/products/gavison.html"><img src="/Assets/medicationAssets/Gaviscon/gaviscon.webp" class="brandImage mt-3"></a>
                 </div>
-
                 <div class="brandContainer d-inline-block">
                     <a href="/src/products/nurofen.html"><img src="/Assets/medicationAssets/Nurofen/nurofen.webp" class="brandImage mt-3"></a>
                 </div>
             </div>
 
-            <div class="row" style="margin-left: 12rem;">
+            <div class="row brandRow">
                 <div class="brandContainer d-inline-block">
                     <a href="/src/products/lemsip.html"><img src="/Assets/medicationAssets/Lemsip/lemsip.png" class="brandImage mb-5"></a>
                 </div>
@@ -87,6 +114,35 @@
             </div>
         </div>
     </div>
-    <script src="" async defer></script>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <!-- Logo + Copyright Column -->
+                    <a class="text-white mx-auto w-25" href="#">
+                        <img src="/Assets/reckittLogo.svg" class="footerLogo" style="float:left;">
+                    </a>
+                    <p class="copyrightStatement text-center">&copy Copyright Reckitt Benckiser Group PLC 2024. All Rights Reserved.</p>
+                </div>
+                <!-- T+C (etc) Column -->
+                <div class="col-md-3 text-center quickLinks">
+                    <a href="https://reckitt.com/terms-and-conditions/" class="noTextDecor darkText"><h5 class="fontSize-medium">Terms & Conditions</h5></a>
+                    <a href="https://reckitt.com/privacy-policy/" class="noTextDecor darkText"><h5 class="fontSize-medium">Privacy Policy</h5></a>
+                    <a href="https://reckitt.com/cookie-policy/" class="noTextDecor darkText"><h5 class="fontSize-medium">Cookie Policy</h5></a>
+                </div>
+                <!-- Social Media Column -->
+                <div class="col-md-4 text-center socialLinks">
+                    <h5>Follow Us</h5>
+                    <a href="https://www.linkedin.com/company/reckitt/" class="noTextDecor"><i class="fa-brands fa-linkedin fontSize-large "></i></a>
+                    <a href="https://www.instagram.com/thisisreckitt/" class="noTextDecor"><i class="fa-brands fa-instagram fontSize-large noTextDecor"></i></a>
+                    <a href="https://www.youtube.com/c/reckitt" class="noTextDecor"><i class="fa-brands fa-youtube fontSize-large noTextDecor"></i></a>
+                    <a href="https://twitter.com/ThisIsReckitt" class="noTextDecor"><i class="fa-brands fa-x-twitter fontSize-large noTextDecor"></i></a>
+                    <a href="https://www.facebook.com/ThisIsReckitt/" class="noTextDecor"><i class="fa-brands fa-facebook fontSize-large noTextDecor"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
