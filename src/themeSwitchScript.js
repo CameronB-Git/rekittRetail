@@ -21,7 +21,7 @@ function toggleMode(){
 
 // Loads the mode from local storage
 function loadMode(){
-var mode = localStorage.getItem("mode"); // Gets the mode from local storage
+    var mode = localStorage.getItem("mode"); // Gets the mode from local storage
     if (mode == "Light"){
         document.documentElement.setAttribute('data-bs-theme','light') // If mode is Light, set theme to Light
         var text = document.getElementById("btnSwitch");

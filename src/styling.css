@@ -22,6 +22,7 @@ ul.navbar-nav{
     --font-size-small: 18px;
     --font-size-medium: 22px;
     --font-size-large: 28px;
+    --hoverColor: #ff5db1;
 }
   
 .fontSize-small {
@@ -44,6 +45,10 @@ ul.navbar-nav{
     border-color: black;
     background-color: #E95EA6;
     color: black;
+}
+
+.mt-10{
+    margin-top: 10%;
 }
 
 .floatRight{
@@ -98,7 +103,7 @@ ul.navbar-nav{
 }
 
 .noTextDecor:hover{
-    color: #ff5db1;
+    color: var(--hoverColor);
 }
 
 /* Dark/Light Mode */
@@ -117,6 +122,19 @@ ul.navbar-nav{
     background-color: #212529;
     color: #ffffff;
 }
+
+[data-bs-theme='dark'] .dropup,
+[data-bs-theme='dark'] .quickLinks a,
+[data-bs-theme='dark'] .socialLinks i{
+    color: #ffffff;
+}
+
+[data-bs-theme='dark'] .quickLinks a:hover,
+[data-be-theme='dark'] .socialLinks i:hover{
+    color: var(--hoverColor);   
+}
+
+
  
 /* Checkout Page */
 .required-asterisk {
@@ -128,13 +146,15 @@ ul.navbar-nav{
 input.form-control{
     width: 100%; /* Change width to 100% to span across the container */
     margin-top: 5px;
-    border-width: 0 0 0.15rem;
+    border-width: 0 0 0.1rem;
     border-color: #F987C2;
+    border-radius: 0px;
 }
 
 input.form-control:focus{
     border-color: #ff5db1;
-    box-shadow: 0 0 0 0.02rem #ff5db1;
+    box-shadow: 0 0 0 0.01rem #ff5db1;
+    border-radius: 4px;
 }
 
 label.form-control{
@@ -168,6 +188,20 @@ label.form-control{
 .dropdown:hover>.dropdown-menu {
     display: block;
     float: right;
+}
+
+/* Makes Dropup Menu Work */
+.dropup:hover>.dropup-menu {
+    display: block;
+    float: right;
+}
+
+.dropup{
+    width: 10rem;
+    border-radius: 0.4rem;
+    border-color: #F987C2;
+    background-color: transparent;
+    color: black;   
 }
 
 /* Makes Dropdown Hoverable */
@@ -250,6 +284,11 @@ footer{
 .socialLinks{
     margin-top: 5.5rem;
 }
+
+form label{
+    margin-top: 0.8rem;
+}
+
 
 /* Testing Classes */
     /* !!! Currently Empty !!! */
@@ -352,6 +391,10 @@ footer{
 
     .paydayDeals{
        margin-top: 0.5rem; 
+    }
+
+    form label{
+        margin-top: 1.75rem;
     }
 
     

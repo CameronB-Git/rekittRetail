@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function displayProduct(product, index) {
         var url = window.location.pathname;
         var filename = url.substring(url.lastIndexOf('/')+1);
-        if (filename != "basket.html"){
+        if (filename != "basket.html" && filename != "billingInformation.html"){
             // Update Product Image
             const imageElement = document.getElementById('productImage');
             imageElement.src = product.productImage;
@@ -224,3 +224,5 @@ function removeItem(id){
     var itemToRemove = document.querySelector(`div${id}`)
     itemToRemove.remove();
 }
+
+

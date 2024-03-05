@@ -1,14 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/src/styling.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/de11364571.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/svg+xml" href="/Assets/reckittLogo_Small.svg">
+    <script type="text/javascript" src="/src/script.js"></script>
+    <script type="text/javascript" src="/src/themeSwitchScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Order Placed | Reckitt</title>
 </head>
-<body>
-    <div>
-        <h1>Thank you for your purchase!</h1>
-        <p>Your order has been placed and will be delivered to you shortly.</p>
-    </div>
+<body onload="loadMode()">
+    <nav class="navbar navbar-expand-md fixed-top py-2">
+        <div class="container-fluid">
+            <div id="name">
+                <a class="navbar-brand text-white mx-auto w-25" href="#">
+                    <img src="/Assets/reckittLogo.svg" width="50%" style="float:left";>
+                </a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+
+            <div class="collapse navbar-collapse absolutecenter" id="navbarNav">
+                <ul class="navbar-nav mx-auto ">
+                    <!-- Home Nav -->
+                    <li class="nav-item">
+                        <a class="nav-link active m-2" href="/index.html" style="text-decoration: none;">
+                            <i class="fa-solid fa-house" style="font-size: 30px;" id="navButton"></i>
+                        </a>
+                    </li> 
+                    <!-- About Us Nav -->
+                    <li class="nav-item">
+                        <a class="nav-link active m-2" href="/about.html" style="text-decoration: none;">
+                            <i class="fa-solid fa-circle-info" style="font-size: 30px;" id="navButton"></i>
+                        </a>
+                    </li>
+                    <!-- Basket Option -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/basket.html" style="text-decoration: none;">
+                            <i class="fa-solid fa-basket-shopping mt-1 ms-2" style="font-size: 36px;" id="selectedButton"></i>
+                        </a>
+                    </li>
+                </ul>
+                <button type="button" class="btn p-1" onclick="toggleMode()" style="float: right"; id="btnSwitch">Dark Mode</button>
+            </div>
+            <div class="w-25" id="preSpacing">
+                <pre class="text-white"></pre>
+            </div>      
+        </div>
+    </nav>
+
+    <h1 class="mt-10 pt-3 text-center">Thank you for your purchase!</h1>
+,   <h3 class="mt-2 text-center">Your order will be with you in due course.</h3>
+    <!-- Footer -->
+    <footer class="mt-5" style="position: fixed; bottom: 0px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <!-- Logo + Copyright Column -->
+                    <a class="text-white mx-auto w-25" href="#">
+                        <img src="/Assets/reckittLogo.svg" class="footerLogo" style="float:left;">
+                    </a>
+                    <p class="copyrightStatement text-center">&copy Copyright Reckitt Benckiser Group PLC 2024. All Rights Reserved.</p>
+                </div>
+                <!-- T+C (etc) Column -->
+                <div class="col-md-3 text-center quickLinks">
+                    <a href="https://reckitt.com/terms-and-conditions/" class="noTextDecor darkText"><h5 class="fontSize-medium">Terms & Conditions</h5></a>
+                    <a href="https://reckitt.com/privacy-policy/" class="noTextDecor darkText"><h5 class="fontSize-medium">Privacy Policy</h5></a>
+                    <a href="https://reckitt.com/cookie-policy/" class="noTextDecor darkText"><h5 class="fontSize-medium">Cookie Policy</h5></a>
+                </div>
+                <!-- Social Media Column -->
+                <div class="col-md-4 text-center socialLinks">
+                    <h5>Follow Us</h5>
+                    <a href="https://www.linkedin.com/company/reckitt/" class="noTextDecor"><i class="fa-brands fa-linkedin fontSize-large "></i></a>
+                    <a href="https://www.instagram.com/thisisreckitt/" class="noTextDecor"><i class="fa-brands fa-instagram fontSize-large noTextDecor"></i></a>
+                    <a href="https://www.youtube.com/c/reckitt" class="noTextDecor"><i class="fa-brands fa-youtube fontSize-large noTextDecor"></i></a>
+                    <a href="https://twitter.com/ThisIsReckitt" class="noTextDecor"><i class="fa-brands fa-x-twitter fontSize-large noTextDecor"></i></a>
+                    <a href="https://www.facebook.com/ThisIsReckitt/" class="noTextDecor"><i class="fa-brands fa-facebook fontSize-large noTextDecor"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
