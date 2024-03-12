@@ -76,26 +76,24 @@
                         <li>Body Aches & Pains</li>
                         <li>Sore Throat</li>
                     </ul>
-                    <p style="font-size: 1.25rem;">
-                        If so, Lemsip is your go-to medicine. 
-                        However you cold, Lemsip it.
-                    </p>
+                    <p style="font-size: 1.25rem;">If so, Lemsip is your go-to medicine.</p> 
+                    <p style="font-size: 1.25rem;">However you cold, Lemsip it.</p> <!-- Slogan -->
                 </div> 
 
                 <!-- Dropdown Menu: Different Items -->
                 <div class="dropdown mt-3" id="dropdownMenu">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuProductOptions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Select Product
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item">Lemsip Max Cold & Flu - Blackcurrant - 10 Sachets</a></li>
-                        <li><a class="dropdown-item">Lemsip Max Cold & Flu - Honey & Ginger - 10 Sachets</a></li>
-                        <li><a class="dropdown-item">Lemsip Max Cold & Flu - All in One - 16 Capsules</a></li>
-                        <li><a class="dropdown-item">Lemsip Max Cold & Flu - 16 Capsules</a></li>
-                        <li><a class="dropdown-item">Lemsip Max Cold & Flu - Day & Night - 16 Capsules</a></li>
+                    <ul class="dropdown-menu" id="productOption" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" id="14">Lemsip Max Cold & Flu - Blackcurrant - 10 Sachets</a></li>
+                        <li><a class="dropdown-item" id="15">Lemsip Max Cold & Flu - Honey & Ginger - 10 Sachets</a></li>
+                        <li><a class="dropdown-item" id="16">Lemsip Max Cold & Flu - All in One - 16 Capsules</a></li>
+                        <li><a class="dropdown-item" id="17">Lemsip Max Cold & Flu - 16 Capsules</a></li>
+                        <li><a class="dropdown-item" id="18">Lemsip Max Cold & Flu - Day & Night - 16 Capsules</a></li>
                     </ul>
                 </div> 
-                <button class="btn btn-secondary buttonTemplate floatRight" onclick="addItemToBasket(selectedProductIndex)">
+                <button class="btn btn-secondary buttonTemplate floatRight" id="addToBasketBtn">
                     <b>Add to Basket</b>
                 </button>
             </div> 
@@ -197,7 +195,9 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
-    <script src="/src/script.js"></script>
     <script src="" async defer></script>
+    <script>
+
+    </script>
 </body>
 </html>

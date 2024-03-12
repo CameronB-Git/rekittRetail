@@ -1,5 +1,26 @@
 @charset "utf-8";
 
+/* Setting Fonts */
+@font-face {
+    font-family: UbuntoMono-Bold;
+    src: url("/Assets/Fonts/UbuntuMono-Bold.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: UbuntoMono-Regular;
+    src: url("/Assets/Fonts/UbuntuMono-Regular.ttf");
+    font-weight: normal;
+}
+
+h1, h2, h3, h4 {
+    font-family: UbuntoMono-Bold;
+}
+
+p, a, label, button, input, ul, li, h5, h6 {
+    font-family: UbuntoMono-Regular;
+}
+
 /* Nav Related Classes */
 nav{
     background-color: #F987C2;
@@ -8,6 +29,8 @@ nav{
 #navButton{
     color: #a90041
 }
+
+
 
 ul.navbar-nav{
     font-size: 18px;
@@ -130,7 +153,7 @@ ul.navbar-nav{
 }
 
 [data-bs-theme='dark'] .quickLinks a:hover,
-[data-be-theme='dark'] .socialLinks i:hover{
+[data-be-theme='dark'] .socialLinks a:hover{
     color: var(--hoverColor);   
 }
 
@@ -397,7 +420,9 @@ form label{
         margin-top: 1.75rem;
     }
 
-    
+    #productOption{
+        max-width: 21.5rem;
+    }
 }
 
 /* Media Queries */

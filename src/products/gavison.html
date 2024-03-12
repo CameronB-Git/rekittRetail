@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/src/styling.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/Assets/reckittLogo_Small.svg">
+    <script src="https://kit.fontawesome.com/de11364571.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/src/script.js"></script>
+    <script type="text/javascript" src="/src/themeSwitchScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Lemsip | Reckitt</title>
+</head>
+<body onload="loadMode()">
+    <nav class="navbar navbar-expand-md fixed-top py-2">
+        <div class="container-fluid">
+            <div id="name">
+                <a class="navbar-brand text-white mx-auto w-25" href="#">
+                    <img src="/Assets/reckittLogo.svg" width="50%" style="float:left";>
+                </a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"> </span>
+            </button>
+            
+
+            <div class="collapse navbar-collapse absolutecenter" id="navbarNav">
+                <ul class="navbar-nav mx-auto ">
+                    <!-- Home Nav -->
+                    <li class="nav-item">
+                        <a class="nav-link active m-2" href="/index.html" style="text-decoration: none;">
+                            <i class="fa-solid fa-house" style="font-size: 30px;" id="navButton"></i>
+                        </a>
+                    </li> 
+                    <!-- About Us Nav -->
+                    <li class="nav-item">
+                        <a class="nav-link active m-2" href="/about.html" style="text-decoration: none;">
+                            <i class="fa-solid fa-circle-info" style="font-size: 30px;" id="navButton"></i>
+                        </a>
+                    </li>
+                    <!-- Basket Option -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/basket.html" style="text-decoration: none;">
+                            <i class="fa-solid fa-basket-shopping mt-1 ms-2" style="font-size: 36px;" id="navButton"></i>
+                        </a>
+                    </li>
+                </ul>
+                <button type="button" class="btn p-1" onclick="toggleMode()" style="float: right"; id="btnSwitch">Dark Mode</button>
+            </div>
+            <div class="w-25" id="preSpacing">
+                <pre class="text-white"></pre>
+            </div>      
+        </div>
+    </nav>
+    <!-- Product Header -->
+    <div class="container" id="productHeader">
+        <div class="row">
+            <!-- Product Image -->
+            <div class="col-md-4">
+                <img src="" id="productImage" width="350rem">
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-md-8"> 
+                <div class="productDetails">
+                    <h2 id="productName"></h2>
+                    <h4 class="mt-3" id="productPrice" style="margin-top: 5px;"></h4>
+                    <h5 class="mt-3">Suffering from Reflux Symptoms?</h5>
+                    <ul style="font-size: 20px;">
+                        <li>Heartburn</li>
+                        <li>Acid Reflux</li>
+                        <li>Trouble Swallowing</li>
+                    </ul>
+                    <p style="font-size: 1.25rem;">
+                        If so, Gaviscon is your go-to solution. 
+                        Gaviscon, and it's gone. 
+                    </p>
+                </div> 
+
+                <!-- Dropdown Menu: Different Items -->
+                <div class="dropdown mt-3" id="dropdownMenu">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuProductOptions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Product
+                    </button>
+                    <ul class="dropdown-menu" id="productOption" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" id="4">Gaviscon Original Aniseed Relief Oral Suspension - 600ml</a></li>
+                        <li><a class="dropdown-item" id="5">Gaviscon Advance Heartburn & Indigestion Liquid Peppermint 300ml</a></li>
+                        <li><a class="dropdown-item" id="6">Gaviscon Double Action Liquid Heartburn & Indigestion Relief Mint Flavour 600ml</a></li>
+                        <li><a class="dropdown-item" id="7">Gaviscon Heartburn & Indigestion Relief Peppermint Flavour Tablets x48</a></li>
+                        <li><a class="dropdown-item" id="8">Gaviscon Double Action Heartburn & Indigestion Mint Flavour Tablets x24</a></li>
+                    </ul>
+                </div> 
+                <button class="btn btn-secondary buttonTemplate floatRight" onclick="addItemToBasket(selectedProductIndex)">
+                    <b>Add to Basket</b>
+                </button>
+            </div> 
+        </div>
+    </div>
+        
+    <!-- Product Information -->
+    <div class="container mt-5 pt-5">
+        <div class="row productInformation" id="productInformation">
+            <!-- Do not take if... -->
+            <h3>Do not take if -</h3>
+            <ul class="mb-5 ms-5">
+                <li>You know you are allergic to any of the ingredients as very rarely difficulty in
+                    breathing and skin rashes have occur (see <a href="#productPIL">Patient Information Leaflet</a> for a full list of
+                    ingredients)
+                </li>
+            </ul>
+
+            <!-- Hazards/Cautions -->
+            <h3><b>Hazards & Cautions - </b></h3>
+            <ul class="mb-5 ms-5">
+                <li>
+                    <b>CONTAINS PARACETAMOL. Do not take with any other paracetamol-containing
+                    products. Immediate medical advice should be sought in the event of an
+                    overdose, even if you feel well.</b>
+                </li>
+            </ul>
+
+            <!-- How to Use -->
+            <h3>How to Use - </h3>
+            <p class="ms-5">For oral use.</p>
+            <p class="ms-5" id="howToUse"></p>
+            <p class="ms-5" id="howToUseTwo"></p>
+            <p class="ms-5 mb-5" id="howToUseThree"></p>
+
+            <!-- Storage -->
+            <h3>Storage -</h3>
+            <p class="ms-5 mb-5">Store below 30°C. Do <b>not</b> refrigerate or freeze.</p>
+
+            <!-- Precautions -->
+            <h3>Precautions -</h3>
+            <ul class="ms-5 mb-5">
+                <li>
+                    This is a medicine; Consult your doctor of pharmacist if you have an
+                    underlying medical condition, are taking any other medication or 
+                    complementary therapy, or if symptoms persist.
+                </li>
+                <li>
+                    Seek advice before using if you are breast feeding, pregnant, planning 
+                    to become pregnant, or suffer from allergies.
+                </li>
+                <li>
+                    Keep all medicines out of the reach of children.
+                </li>
+            </ul>
+
+            <!-- Active Ingredients -->
+            <h3>Active Ingredients</h3>
+            <ul class="ms-5">
+                <li>Paracetamol 500mg</li>
+                <li>Phenylephrine Hydrochloride 6.1mg</li>
+            </ul>
+            <p class="mb-5">See Patient Information Leaflet below for further details.</p>
+
+            <!-- Patient Leaflet Attachment -->
+            <h3>Attachments - </h3>
+            <a id="productPIL" href="#" target="_blank">Patient Information Leaflet</a>
+        </div>
+    </div>
+    
+    <br><br><br>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <!-- Logo + Copyright Column -->
+                    <a class="text-white mx-auto w-25" href="#">
+                        <img src="/Assets/reckittLogo.svg" class="footerLogo" style="float:left;">
+                    </a>
+                    <p class="copyrightStatement text-center">&copy Copyright Reckitt Benckiser Group PLC 2024. All Rights Reserved.</p>
+                </div>
+                <!-- T+C (etc) Column -->
+                <div class="col-md-3 text-center quickLinks">
+                    <a href="https://reckitt.com/terms-and-conditions/" class="noTextDecor darkText"><h5 class="fontSize-medium">Terms & Conditions</h5></a>
+                    <a href="https://reckitt.com/privacy-policy/" class="noTextDecor darkText"><h5 class="fontSize-medium">Privacy Policy</h5></a>
+                    <a href="https://reckitt.com/cookie-policy/" class="noTextDecor darkText"><h5 class="fontSize-medium">Cookie Policy</h5></a>
+                </div>
+                <!-- Social Media Column -->
+                <div class="col-md-4 text-center socialLinks">
+                    <h5>Follow Us</h5>
+                    <a href="https://www.linkedin.com/company/reckitt/" class="noTextDecor"><i class="fa-brands fa-linkedin fontSize-large "></i></a>
+                    <a href="https://www.instagram.com/thisisreckitt/" class="noTextDecor"><i class="fa-brands fa-instagram fontSize-large noTextDecor"></i></a>
+                    <a href="https://www.youtube.com/c/reckitt" class="noTextDecor"><i class="fa-brands fa-youtube fontSize-large noTextDecor"></i></a>
+                    <a href="https://twitter.com/ThisIsReckitt" class="noTextDecor"><i class="fa-brands fa-x-twitter fontSize-large noTextDecor"></i></a>
+                    <a href="https://www.facebook.com/ThisIsReckitt/" class="noTextDecor"><i class="fa-brands fa-facebook fontSize-large noTextDecor"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+    <script src="/src/script.js"></script>
+    <script src="" async defer></script>
+</body>
+</html>
