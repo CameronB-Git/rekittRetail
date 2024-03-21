@@ -32,6 +32,7 @@ nav{
 
 
 
+
 ul.navbar-nav{
     font-size: 18px;
 }
@@ -420,8 +421,11 @@ form label{
         margin-top: 1.75rem;
     }
 
-    #productOption{
-        max-width: 21.5rem;
+    /* Makes Dropdown Menu Responsive to Mobile Devices */
+    .dropdown-menu {
+        max-height: 200px; /* Set a maximum height for the dropdown menu */
+        max-width: 100%;
+        overflow-y: auto; /* Enable vertical scrolling */
     }
 }
 

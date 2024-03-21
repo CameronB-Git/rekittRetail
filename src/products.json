@@ -10,6 +10,7 @@
             "howToUse": "<b>For Adults and children over the age of 16 years only: Mouth Ulcers & Sores -</b> Massage approximately one centimetre (half an inch) of Bonjela onto the sore area. This can be repeated after 3 hours.",
             "howToUseTwo": "<b>Denture Sores -</b> Massage approximately one centimetre of Bonjela onto the sore area, and leave at least 30 minutes before reinserting dentures. Do not apply Bonjela directly onto the dentures.",
             "howToUseThree": "If you miss a dose, just apply a new dose and follow the instructions as before",
+            "hazardsCautions": "<b>DO NOT GIVE TO CHILDREN AND ADOLESCENTS UNDER 16 YEARS OF AGE.</b>",
             "maxQuantity": 10
         },
         {
@@ -22,6 +23,7 @@
             "howToUse": "<b>For Adults and children over the age of 16 years only: Mouth Ulcers & Sores -</b> Massage approximately one centimetre (half an inch) of Bonjela onto the sore area. This can be repeated after 3 hours.",
             "howToUseTwo": "<b>Denture Sores -</b> Massage approximately one centimetre of Bonjela onto the sore area, and leave at least 30 minutes before reinserting dentures. Do not apply Bonjela directly onto the dentures.",
             "howToUseThree": "If you miss a dose, just apply a new dose and follow the instructions as before",
+            "hazardsCautions": "<b>DO NOT GIVE TO CHILDREN AND ADOLESCENTS UNDER 16 YEARS OF AGE.</b>",
             "maxQuantity": 10
         },
         {
@@ -33,6 +35,7 @@
             "pilLocation": "/Assets/medicationAssets/Bonjela/bonjelaPILs/bonjelaJunior15g_PIL.pdf",
             "howToUse": "<b>For adults, the elderly and children over 5 months: </b>Apply a little gel to the painful or sore area with either a clean finger tip or swab. This may be repeated after 20 minutes and then every three hours.",
             "howToUseTwo": "If you miss a dose, just apply a new dose and follow the instructions as before",
+            "hazardsCautions": "<b>Not suitable for infants under five months.</b>",
             "maxQuantity": 10
         },
         {
@@ -44,6 +47,7 @@
             "pilLocation": "/Assets/medicationAssets/Bonjela/bonjelaPILs/bonjelaInfantSugarFree15g_PIL.pdf",
             "howToUse": "<b>For adults, the elderly and children over 5 months: </b>Apply a little gel to the painful or sore area with either a clean finger tip or swab. This may be repeated after 20 minutes and then every three hours.",
             "howToUseTwo": "If you miss a dose, just apply a new dose and follow the instructions as before",
+            "hazardsCautions": "<b>Do not exceed the stated dose. Do not use if your child is allergic to any of the ingredients.</b> In case of irritation stop using the product and seek medical advice immediately. If symptoms persist consult your doctor or dentist.",
             "maxQuantity": 10
         },
         {
@@ -56,6 +60,7 @@
             "howToUse": "<b>Adults and children 12 years and over:</b> Take 10-20ml (two to four 5ml spoonfuls) after meals and at bedtime, up to four times a day. Shake well before use.",
             "howToUseTwo": "<b>Children under 12 years:</b> Should be given only on medical advice.",
             "howToUseThree": "If you take too much of this product you may feel bloated and experience some abdominal discomfort.",
+            "hazardsCautions": "High in sodium - see the leaflet for further information. <b>Keep all medicines out of the sight and reach of children.</b>",
             "maxQuantity": 10
         },
         {
@@ -68,6 +73,7 @@
             "howToUse": "<b>Adults including the elderly and children 12 years and over:</b> 5-10 ml (one to two 5ml spoonfuls) after meals and at bedtime. Shake well before use.",
             "howToUseTwo": "<b>Children under 12 years:</b> Should only be taken on medical advice",
             "howToUseThree": "If you forget a dose it is not necessary to double the dose next time, just carry on taking as before. If you take too much of this product you may feel bloated and experience some abdominal discomfort.",
+            "hazardsCautions": "Check that the cap seal is unbroken before first using this product. <b>Keep all medicines out of the sight and reach of children</b>",
             "maxQuantity": 10
         },
         {
@@ -80,6 +86,7 @@
             "howToUse": "<b>Adults and children 12 years and over:</b> Take 10-20ml (one to four 5ml spoonfuls) after meals and at bedtime, up to four times a day, or as directed by your doctor. Shake well before use.",
             "howToUseTwo": "<b>Children under 12 years:</b> Should only be taken on medical advice",
             "howToUseThree": "If you take too much of this product you may feel bloated.",
+            "hazardsCautions": "<bDo not take if you know you are allergic to any of the ingredients as very rarely difficulty in breathing and skin rashes have occured.</b>",
             "maxQuantity": 10
         },
         {
@@ -92,6 +99,7 @@
             "howToUse": "<b>Adults and children 12 years and over:</b> when symptoms occur, take two to four tablets after meals and at bedtime. Chew thoroughhly before swallowing.",
             "howToUseTwo": "<b>Children under 12 years:</b> Should only be taken on medical advice",
             "howToUseThree": "If you forget a dose it is not necessary to double the dose next time, just carry on taking as before. If you take too much of this product you may feel bloated.",
+            "hazardsCautions": "<b>Contains sodium and calcium.</b> If you have been advised to follow a diet restricted in either of these salts please consult your doctor before taking this product.",
             "maxQuantity": 10
         },
         {
@@ -104,6 +112,7 @@
             "howToUse": "<b>Adults and children 12 years and over:</b> when symptoms occur, take two to four tablets after meals and at bedtime, up to four times a day. Chew thoroughhly before swallowing.",
             "howToUseTwo": "<b>Children under 12 years:</b> Should only be taken on medical advice",
             "howToUseThree": "If you forget a dose it is not necessary to double the dose next time, just carry on taking as before. If you take too much of this product you may feel bloated.",
+            "hazardsCautions": "<b>Contains sodium and calcium.</b> If you have been advised to follow a diet restricted in either of these salts please consult your doctor before taking this product.",
             "maxQuantity": 10
         },
         {
@@ -116,6 +125,7 @@
             "howToUse": "<b>Adults and children over 12 years:</b> Initial dose 2 capsules taken with water and swallowed whole, then, if necessary, 1 or 2 capsules after at least 8 hours. ",
             "howToUseTwo": "Do not give to children under 12 years.",
             "howToUseThree": "Do not chew of suck the capsules. Do not exceed more than 4 capsules in 24 hours. Do not exceed the stated dose.",
+            "hazardsCautions": "<b>CONTAINS IBUPROFEN. Do not take with any other ibuprofen-containing products. Immediate medical advice should be sought in the event of an overdose, even if you feel well.</b>",
             "maxQuantity": 2
         },
         {
@@ -128,6 +138,7 @@
             "howToUse": "<b>Adults, the elderly and children over 12 years:</b> Take 2 tablets every 8 hours. Leave at least 4 hours between doeses and do not exceed 6 tablets in any 24 hour period.",
             "howToUseTwo": "Do not give to children under 12 years.",
             "howToUseThree": "This medicine is for short-term use only. Take the lowest dose for the shortest time necessary. <b>Do not take Nurofen Day & Night Cold & Flu for longer than 10 days</b>",
+            "hazardsCautions": "<b>CONTAINS IBUPROFEN. Do not take with any other ibuprofen-containing products. Immediate medical advice should be sought in the event of an overdose, even if you feel well.</b>",
             "maxQuantity": 2
         },
         {
@@ -140,6 +151,7 @@
             "howToUse": "<b>Adults, the elderly and children & adolescents between 12 and 18 years:</b>Take 1 or 2 capsules with water, up to three times a day as required. Leave at least four hours between doses. Do not take more than 6 capsules in 24 hours.",
             "howToUseTwo": "Do not give to children under 12 years.",
             "howToUseThree": "This product is for short-term use only. You should take the lowest dose for the shortest time necessary to relieve your symptoms.",
+            "hazardsCautions": "<b>CONTAINS IBUPROFEN. Do not take with any other ibuprofen-containing products. Immediate medical advice should be sought in the event of an overdose, even if you feel well.</b>",
             "maxQuantity": 2
         },
         {
@@ -152,6 +164,7 @@
             "howToUse": "<b>Adults, the elderly and childrem ages 12 years and older:</b> Take 1 capsule with water, up to three times a day as required. Leave at least four hours betwene doses. Do not take more than 3 capsules in 24 hours.",
             "howToUseTwo": "Do not give to children under 12 years.",
             "howToUseThree": "This product is for short-term use only. You should take the lowest dose for the shortest time necessary to relieve your symptoms.",
+            "hazardsCautions": "<b>CONTAINS IBUPROFEN. Do not take with any other ibuprofen-containing products. Immediate medical advice should be sought in the event of an overdose, even if you feel well.</b>",
             "maxQuantity": 2
         },
         {
@@ -164,6 +177,7 @@
             "howToUse": "<b>Adults, the elderly and children & adolescents between 12 and 18 years:</b> Take 1 or 2 tablets with water, up to three times a day as required. Leave at least four hours between doses. Do not take more than 6 tavlets in 24 hours.",
             "howToUseTwo": "Do not give to children under 12 years.",
             "howToUseThree": "This product is for short-term use only. You should take the lowest dose for the shortest time necessary to relieve your symptoms.",
+            "hazardsCautions": "<b>CONTAINS IBUPROFEN. Do not take with any other ibuprofen-containing products. Immediate medical advice should be sought in the event of an overdose, even if you feel well.</b>",
             "maxQuantity": 2
         },
         {
@@ -175,6 +189,7 @@
             "pilLocation": "/Assets/medicationAssets/Lemsip/lemsipPILs/lemsipMaxBlackcurrant_PIL.pdf",
             "howToUse": "<b>Adults and children aged 16 or over:</b> Dissolve one sachet in a mug of hot but not boiling water. Stir until dissolved. If preferred, sweeten to taste with sugar, honey or your usual sweetener. It is impotantant to drink plenty of fluids when suffering from Colds & Flu.",
             "howToUseTwo": "<b>One</b> sachet every 4-6 hours as required. <b>Do not</b> take more than 4 sachets within 24 hours.",
+            "hazardsCautions": "<b>CONTAINS PARACETAMOL. Do not take with any other paracetamol-containing products. Immediate medical advice should be sought in the event of an overdose, even if you feel well.</b>",
             "maxQuantity": 2
         },
         {
@@ -186,6 +201,7 @@
             "pilLocation": "/Assets/medicationAssets/Lemsip/lemsipPILs/lemsipMaxHoneyGinger_PIL.pdf",
             "howToUse": "<b>Adults and children aged 16 or over:</b> Dissolve one sachet in a mug of hot but not boiling water. Stir until dissolved. If preferred, sweeten to taste with sugar, honey or your usual sweetener. It is impotantant to drink plenty of fluids when suffering from Colds & Flu.",
             "howToUseTwo": "<b>One</b> sachet every 4-6 hours as required. <b>Do not</b> take more than 4 sachets within 24 hours.",
+            "hazardsCautions": "<b>CONTAINS PARACETAMOL. Do not take with any other paracetamol-containing products. Immediate medical advice should be sought in the event of an overdose, even if you feel well.</b>",
             "maxQuantity": 2
         },
         {
@@ -196,6 +212,7 @@
             "imageLocation": "/Assets/medicationAssets/Lemsip/lemsipProducts/lemsip_Max_All_Capsules.png",
             "pilLocation": "/Assets/medicationAssets/Lemsip/lemsipPILs/lemsipMaxAllInOneCapsules_PIL.pdf",
             "howToUse": "<b>Adults and children aged 16 or over:</b> The capsules should be swallowed whole with water. Do not chew. It is important to drink plenty of fluids when suffering from colds and flu.",
+            "hazardsCautions": "<b>CONTAINS PARACETAMOL. Do not take with any other paracetamol-containing products. Immediate medical advice should be sought in the event of an overdose, even if you feel well.</b>",
             "maxQuantity": 2
         },
         {
@@ -206,6 +223,7 @@
             "imageLocation": "/Assets/medicationAssets/Lemsip/lemsipProducts/lemsip_Max_Capsules.png",
             "pilLocation": "/Assets/medicationAssets/Lemsip/lemsipPILs/lemsipMaxCapsules_PIL.pdf",
             "howToUse": "<b>Adults and children aged 16 or over:</b> The capsules should be swallowed whole with water. Do not chew. It is important to drink plenty of fluids when suffering from colds and flu.",
+            "hazardsCautions": "<b>CONTAINS PARACETAMOL. Do not take with any other paracetamol-containing products. Immediate medical advice should be sought in the event of an overdose, even if you feel well.</b>",
             "maxQuantity": 2
         },
         {
@@ -216,6 +234,7 @@
             "imageLocation": "/Assets/medicationAssets/Lemsip/lemsipProducts/lemsip_Max_Day_Night_Capsules.png",
             "pilLocation": "/Assets/medicationAssets/Lemsip/lemsipPILs/lemsipDayNight_Capsules_PIL.pdf",
             "howToUse": "<b>Adults and children aged 16 or over:</b> The capsules should be swallowed whole with water. Do not chew. It is important to drink plenty of fluids when suffering from colds and flu.",
+            "hazardsCautions": "<b>CONTAINS PARACETAMOL. Do not take with any other paracetamol-containing products. Immediate medical advice should be sought in the event of an overdose, even if you feel well.</b>",
             "maxQuantity": 2
         },
         {
@@ -227,6 +246,7 @@
             "pilLocation": "/Assets/medicationAssets/Optrex/optrexPILs/optrexHayfeverReliefDrops10ml_PIL.pdf",
             "howToUse": "<b>Adults, the elderly, and children over 6 years:</b> One or two drops to be administered into each eye four-times daily.",
             "howToUseTwo": "<b>Children under 6 years:</b> This medicine should not be used in children under 6 years of age.",
+            "hazardsCautions": "<b>Keep out of the sight and reach of children.</b>. See your doctor or pharmacist if there is no improvement after 2 days of use and before using continuously for more than 14 days. DO NOT EXCEED THE STATED DOSE.",
             "maxQuantity": 5
         },
         {
@@ -238,6 +258,7 @@
             "pilLocation": "/Assets/medicationAssets/Optrex/optrexPILs/optrexBloodshotEyeDropsRelief10ml_PIL.pdf",
             "howToUse": "<b>Adults and children over 12 years:</b> Gently squeeze one or two drops into each eye. Repeat as necessary. Do not use more than four times in 24 hours.",
             "howToUseTwo": "Continued use may increase redness of the eye. Do not use the medicine if it changes colour or becomes cloudy.",
+            "hazardsCautions": "<b>Stop using an talk to your pharmacist or doctor if you have<b>: eye pain, changes in vision, continued/increased redness or irritation of the eye, or if the condition worsens or persists for more than 24 hours.",
             "maxQuantity": 5
         },
         {
@@ -249,6 +270,7 @@
             "pilLocation": "/Assets/medicationAssets/Optrex/optrexPILs/optrexAllergyDrops10ml_PIL.pdf",
             "howToUse": "<b>Adults and children over 12 years:</b> Gently squeeze one or two drops inside the lower lid without touching your eye, close your eye, and wipe away any excess liquid from the eyes with a clean tissue. Repeat for other eye if necessary.",
             "howToUseTwo": "If symptoms worsen or do not improve, talk to your doctor or pharmacist.",
+            "hazardsCautions": "<b>Before using this product:</b> do not use if you are sensitive/allergic to any of the ingredients. Read <a href='#productPIL'>Patient Information Leaflet</a> before use. <b>Keep out of the sight and reach of children.</b>", 
             "maxQuantity": 5
         },
         {
@@ -261,6 +283,7 @@
             "howToUse": "<b>Adults, the elderly, and children over 2 years:</b> Place the nozzle of the tube close to your eye, ensuring it does <b>not</b> touch your eye (use a mirror if this will help you), gently pull lower eyelid downwards, look up, and gently squeeze the tube to apply 1cm of the ointment to the space between the lower eyelid and the eye. Repeat with other eye if necessary.",
             "howToUseTwo": "It is recommeneded that any child <b>below the age of two years</b> with an eye infection should be seen by a doctor.",
             "howToUseThree": "See Patient Information Leaflet for full instructions on how to use this product.",
+            "hazardsCautions": "Do not use this ointment if you are allergic to chloramphenicol or anything else in the ointment. If you do not get better within 48 hours talk to a doctor. If your eyes get worse see a doctor straight away. After 5 days, throw away any ointment left.", 
             "maxQuantity": 5
         },
         {
@@ -272,6 +295,7 @@
             "pilLocation": "/Assets/medicationAssets/Optrex/optrexPILs/optrexSoreEyeDropsReliefSootheCleanse10ml_PIL.pdf",
             "howToUse": "<b>Adults and children over 12 years:</b> Gently squeeze bottle and let 1 drop fall into the space between the lower eyelid and the eye, ensuring the nozzle does <b>not</b> touch your eye, the skin around your eye, or your fingers.",
             "howToUseTwo": "See <a href='#productPIL'>Patient Information Leaflet</a> for full instructions on how to use this product.",
+            "hazardsCautions": "<b>Keep all medicines out of the sight and reach of children.</b>", 
             "maxQuantity": 5
         },
         {
@@ -281,8 +305,8 @@
             "price": 3.99,
             "imageLocation": "/Assets/medicationAssets/Strepsils/strepsilsProducts/strepsilsExtraBCLozengesx24.png",
             "pilLocation": "/Assets/medicationAssets/Strepsils/strepsilsPILs/strepsilsExtraBCLozengesx24_PIL.pdf",
-            "howToUse": "",
-            "howToUseTwo": "",
+            "howToUse": "<b>Adults, the elderly, and children over 6 years:</b> Dissolve one lozenge slowly in the mouth every 2 to 3 hours. No more than 12 lozenges per day. Do not take more medicine than the label tells you to. For oral administration only",
+            "hazardsCautions": "Remember young children can choke on lozenges. If you are allergic to any of the ingredients do not use this product. If you are pregnant, or if you have been told by your doctor that you have an intolerance to some sugars, contact your doctor before taking this product.",
             "maxQuantity": 10
         },
         {
@@ -292,8 +316,8 @@
             "price": 4.99,
             "imageLocation": "/Assets/medicationAssets/Strepsils/strepsilsProducts/strepsilsHoney&LemonLozengesx36.png",
             "pilLocation": "/Assets/medicationAssets/Strepsils/strepsilsPILs/strepsilsHoney&LemonLozengesx36_PIL.pdf",
-            "howToUse": "",
-            "howToUseTwo": "",
+            "howToUse": "<b>Adults and children over 6 years old:</b> Dissolve one lozenge slowly in the mouth every 2 to 3 hours. No more than 12 lozenges per day. Do not exceed the stated dose.",
+            "hazardsCautions": "Remember young children can choke on lozenges. If you are allergic to any of the ingredients do not use this product. May cause allergic reactions including asthma. This is more common if you are allergic to asprin.",
             "maxQuantity": 10
         },
         {
@@ -303,8 +327,7 @@
             "price": 5.99,
             "imageLocation": "/Assets/medicationAssets/Strepsils/strepsilsProducts/strepsilsStrawberrySugarFreeLozengesx36.png",
             "pilLocation": "/Assets/medicationAssets/Strepsils/strepsilsPILs/strepsilsStrawberrySugarFreeLozengesx36_PIL.pdf",
-            "howToUse": "",
-            "howToUseTwo": "",
+            "howToUse": "<b>Adults and children over 6 years:</b> Dissolve one lozenge slowly in the mouth every 2 to 3 hours. No more than 12 lozenges per day. Do not exceed the stated dose.",            "hazardsCautions": "Remember young children can choke on lozenges. If you are allergic to any of the ingredients do not use this product. This product contains isomaltitol and maltitol syrup which may have a mild laxative effect if several are taken a day. Please see the <a href=#productPIL>Patient Information Leaflet</a> for further information.",
             "maxQuantity": 10
         },
         {
@@ -314,8 +337,9 @@
             "price": 4.49,
             "imageLocation": "/Assets/medicationAssets/Strepsils/strepsilsProducts/strepsilsSoreThroatReliefHoney&Lemonx24.png",
             "pilLocation": "/Assets/medicationAssets/Strepsils/strepsilsPILs/strepsilsSoreThroatReliefHoney&Lemonx24_PIL.pdf",
-            "howToUse": "",
-            "howToUseTwo": "",
+            "howToUse": "<b>Adults, the elderly and children over 6 years:</b> Dissolve one lozenge slowly in the mouth every 3 hours.",
+            "howToUseTwo": "No more than 12 lozenges in 24 hours. Do not take more medicine than the label tells you to. For oral administration only.",
+            "hazardsCautions": "Not suitable for children under 6 years old. Remember young children can choke on lozenges. If you are allergic to any of the ingredients do not use this product. If you are pregnant, or if you have been told by your doctor that you have an intolerance to some sugars, contact your doctor before taking this product.",
             "maxQuantity": 10
         },
         {
@@ -325,8 +349,8 @@
             "price": 3.99,
             "imageLocation": "/Assets/medicationAssets/Strepsils/strepsilsProducts/strepsilsOriginalLozengesx16.png",
             "pilLocation": "/Assets/medicationAssets/Strepsils/strepsilsPILs/strepsilsOriginalLozengesx16_PIL.pdf",
-            "howToUse": "",
-            "howToUseTwo": "",
+            "howToUse": "<b>Adults and children over the age of 6:</b> Dissolve one lozenge slowly in the mouth every 2 to 3 hours. No more than 12 lozenges per day. Do not exceed the stated dose.",
+            "hazardsCautions": "Remember young children can choke on lozenges. If you are allergic to any of the ingredients do not use this product. If you are pregnant, or if you have been told by your doctor that you have an intolerance to some sugars, contact your doctor before taking this product. Please see the <a href=#productPIL>Patient Information Leaflet</a> for further information.",
             "maxQuantity": 10
         }
     ]
