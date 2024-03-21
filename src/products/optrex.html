@@ -11,7 +11,7 @@
     <script type="text/javascript" src="/src/script.js"></script>
     <script type="text/javascript" src="/src/themeSwitchScript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Lemsip | Reckitt</title>
+    <title>Optrex | Reckitt</title>
 </head>
 <body onload="loadMode()">
     <nav class="navbar navbar-expand-md fixed-top py-2">
@@ -90,7 +90,7 @@
                         <li><a class="dropdown-item" id="23">Optrex Sore Eye Drops Irritation Relief Soothe & Cleanse - 10ml</a></li>
                     </ul>
                 </div> 
-                <button class="btn btn-secondary buttonTemplate floatRight" onclick="addItemToBasket(selectedProductIndex)">
+                <button class="btn btn-secondary buttonTemplate floatRight" id="addToBasketBtn">
                     <b>Add to Basket</b>
                 </button>
             </div> 
@@ -111,13 +111,7 @@
 
             <!-- Hazards/Cautions -->
             <h3><b>Hazards & Cautions - </b></h3>
-            <ul class="mb-5 ms-5">
-                <li>
-                    <b>CONTAINS PARACETAMOL. Do not take with any other paracetamol-containing
-                    products. Immediate medical advice should be sought in the event of an
-                    overdose, even if you feel well.</b>
-                </li>
-            </ul>
+            <ul class="mb-5 ms-5 "><li id="hazardsCautions"></li></ul>
 
             <!-- How to Use -->
             <h3>How to Use - </h3>
@@ -193,9 +187,5 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
-    <script src="/src/script.js"></script>
-    <script src="" async defer></script>
 </body>
 </html>
