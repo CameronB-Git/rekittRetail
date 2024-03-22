@@ -5,7 +5,7 @@ var items = [];
 let selectedProduct;
 let firstItemId;
 let totalPrice = 0;
-let unNeededPages = ["index.html", "about.html", "basket.html", "checkout.html", "confirmation.html", "billingInformation.html"];
+let unNeededPages = ["index.html", "basket.html", "checkout.html", "confirmation.html", "billingInformation.html"];
 let ibuprofenContaining = [9, 10, 11, 12, 13];
 let paracetamolContaining = [14, 15, 16, 17, 18];
 
