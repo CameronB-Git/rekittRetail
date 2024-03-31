@@ -223,6 +223,12 @@ function displayProductsInBasket() {
         subtotalDiv.className = 'container-fluid subtotalContainer';
         target.parentNode.insertBefore(subtotalDiv, target.nextSibling);
 
+        // TODO: NEED TO DISPLAY THIS CHANGE TO THE USER INDICATING IT WORKS
+        if (totalPrice > 25.0){
+            totalPrice -= 10;
+        }
+        // TODO: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
         // Add Subtotal Heading + Value
         var subtotalHeading = document.createElement('h5');
         subtotalHeading.className = 'normalFont';
