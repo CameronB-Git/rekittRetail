@@ -69,7 +69,16 @@ function loadProductInfo(selectedProductIndex) {
         document.getElementById('productImage').alt = `${selectedProduct.name} (Product) Image`; // Set Alt Text for Image
         document.getElementById('productImage').title = selectedProduct.name; // Set Title for Product Name
         document.getElementById('productName').innerText = selectedProduct.name;
-        document.getElementById('productPrice').innerText = '£' + selectedProduct.price.toFixed(2); // Set Price to 2 Decimal Places
+
+        if (selectedProduct.brand == "gaviscon"){
+            document.getElementById('productPrice').innerHTML = `WAS: £${selectedProduct.price.toFixed(2)}`;
+            document.getElementById('productPriceNow').innerHTML = `NOW: £${(selectedProduct.price * 0.8).toFixed(2)}`;
+        }
+        else{
+            document.getElementById('productPrice').innerText = '£' + selectedProduct.price.toFixed(2); // Set Price to 2 Decimal Places           
+        }
+
+
         document.getElementById('howToUse').innerHTML = selectedProduct.howToUse;
         document.getElementById('productPIL').href = selectedProduct.pilLocation;
         document.getElementById('hazardsCautions').innerHTML = selectedProduct.hazardsCautions;
@@ -136,6 +145,34 @@ function addItemToBasket() {
     alert(`Added ${selectedProduct.name} to your basket!`)
 }
 
+function displayOrderSummary(){
+    selectedProductIndex = getItemIndex();
+    var standardDelivery = 5.99;
+    var itemPrice = document.querySelector('.totalItemPrice');
+    var deliveryFee = document.querySelector('.deliveryFee');
+    
+    if (Array.isArray(selectedProductIndex) && selectedProductIndex.length > 0) {
+        for (let i = 0; i < selectedProductIndex.length; i++) {
+            selectedProduct = products[selectedProductIndex[i]]; // Get the selected product
+            totalPrice = totalPrice + (parseFloat(selectedProduct.price));
+        }
+    }
+
+    itemPrice.innerHTML = `Items: £${totalPrice.toFixed(2)}`;
+    deliveryFee.innerHTML = `Delivery Fee: £${standardDelivery}`;
+
+    if (totalPrice > 15){
+        var promotionApplied = document.createElement('h5');
+        promotionApplied.className = 'mt-3'
+        promotionApplied.innerHTML = `Promotion Applied: -£${standardDelivery}`
+        deliveryFee.appendChild(promotionApplied);
+    }
+    else totalPrice += standardDelivery;
+    
+    var orderTotal = document.querySelector('.orderTotal');
+    orderTotal.innerHTML = `Order Total: £${totalPrice.toFixed(2)}`;
+}
+
 function displayProductsInBasket() {
     selectedProductIndex = getItemIndex();
 
@@ -168,7 +205,7 @@ function displayProductsInBasket() {
                 textColumn = 'col-sm-10';
             }
 
-            // Create Two Divs inside of DivRow
+            // TWO ROWS IN CONTAINER --> Create Two Divs inside of DivRow
             var target = document.querySelector('.row');
             var divLeft = document.createElement('div');
             divLeft.className = imageColumn;
@@ -178,7 +215,7 @@ function displayProductsInBasket() {
             divRight.className = textColumn;
             target.appendChild(divRight);
 
-            // Creating Image inside of Div
+            // PRODUCT IMAGE --> Creating Image inside of Div
             var target = document.querySelector(`.${imageColumn}`);
             var newImg = document.createElement('img');
             if ((selectedProduct.name).includes("Capsules")){
@@ -190,20 +227,20 @@ function displayProductsInBasket() {
             newImg.src = selectedProduct.imageLocation;
             target.appendChild(newImg);
 
-            // Creating Product Name inside of Div
+            // PRODUCT NAME --> Creating Product Name inside of Div
             target = document.querySelector(`.${textColumn}`)
             var newName = document.createElement('h3');
             newName.className = 'productName d-inline';
             newName.textContent = selectedProduct.name;
             target.appendChild(newName);
 
-            // Creating Product Price inside of Div
+            // PRODUCT PRICE --> Creating Product Price inside of Div
             var newPrice = document.createElement('h5');
             newPrice.className = 'productPrice d-inline';
             newPrice.textContent = `£${selectedProduct.price.toFixed(2)}`;
             target.appendChild(newPrice);
 
-            // Add Remove Button inside of div
+            // REMOVE BUTTON --> Add Remove Button inside of div
             var removeButton = document.createElement('a');
             removeButton.className = 'removeButton d-inline';
             removeButton.href = "#";
@@ -243,6 +280,7 @@ function displayProductsInBasket() {
             window.location.href = "/checkout.html";
         }
         subtotalDiv.appendChild(checkoutButton)
+        
     } else {
         // Displays if user has Zero(0) Products in Basket
         var target = document.querySelector('#productHeader');
@@ -253,44 +291,33 @@ function displayProductsInBasket() {
     }
 
     // If < 2 Products in Basket, Footer is Fixed to Bottom
-    if (selectedProductIndex.length < 2){
-        footer = document.querySelector('footer');
-        footer.style.position = 'fixed';
-    }
+    if (selectedProductIndex.length < 2) footer = document.querySelector('footer'); footer.style.position = 'fixed';
 }
 
 function getItemIndex() {
     var itemIndex = localStorage.getItem("basket");
 
-    // Parse the JSON string into an array
-    return JSON.parse(itemIndex);
+    return JSON.parse(itemIndex); // Parse JSON String --> Arr
 }
 
 function removeParentElement() {
     removeButton = document.querySelector('.removeButton');
-    // Get the selected product index associated with the clicked remove button
-    let itemIndex = parseInt(removeButton.id);
 
-    // Retrieve current basket items from local storage or initialize an empty array
-    let basketItems = JSON.parse(localStorage.getItem('basket'));
+    let itemIndex = parseInt(removeButton.id); // Get selectedProductIndex assosciated with the clicked removed button
 
-    // Find the index of the item to remove in the basket array
-    let indexToRemove = basketItems.indexOf(itemIndex);
+    let basketItems = JSON.parse(localStorage.getItem('basket')); // Get Basket from localStorage
 
-    // Check if the item exists in the basket array
+    let indexToRemove = basketItems.indexOf(itemIndex); // Find Index
+
+    // If item exists in arr --> Remove Item + Update Basket in localStorage
     if (indexToRemove !== -1) {
-        // Remove the item from the basket array
         basketItems.splice(indexToRemove, 1);
-
-        // Store the updated basket in local storage
         localStorage.setItem('basket', JSON.stringify(basketItems));
     }
 
-    // Get the parent element of the remove button
-    var parentElement = removeButton.parentNode.parentNode.parentNode;
+    var parentElement = removeButton.parentNode.parentNode.parentNode; // Get Entire Container of Remove Button
     
-    // Remove the parent element
-    parentElement.parentNode.removeChild(parentElement);
+    parentElement.parentNode.removeChild(parentElement); // Remove It
 
     window.location.reload(); // Reload the page to reflect the changes
 }

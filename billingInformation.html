@@ -146,7 +146,7 @@
     
                     <!-- Expiration Month -->
                     <div class="col-md-6">
-                        <label for="expirationDate" class="text-center">
+                        <label for="expirationDate" class="text-center mb-2">
                             Expiration Date
                             <span class="required-asterisk">*</span>
                         </label>
@@ -202,11 +202,20 @@
                 </div>
             </div>
             
+            <!-- Order Summary Section -->
+            <section class="text-center mt-5">
+                <h2>Order Summary</h2>
+                <h5 class="totalItemPrice mt-4">Items: [Insert Price]</h5>
+                <h5 class="deliveryFee mt-3">Delivery Fee: [Insert Delivery]</h5>
+                <h4 class="orderTotal mt-4">Order Total: [Insert Total Order Price]</h4>
+            </section>
+            
 
             <!-- Submit Button -->
             <div class="col-md-12 text-center mt-5 mb-5">
                 <a href="/success.html"><button type="button" class="btn btn-info" id="submitButton">Place Order</button></a>
             </div>
+
 
             <br><br><br>
         </form>
@@ -244,6 +253,7 @@
     <script>
         window.onload = function() {
             loadMode();
+            displayOrderSummary();
             var dropdownMonthItems = document.querySelectorAll('#monthOptions .dropdown-item');
             var dropdownButtonMonths = document.querySelector('#dropdownMenuButtonMonths');
             
