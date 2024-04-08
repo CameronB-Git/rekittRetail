@@ -14,11 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch('/src/products.json')
     .then(response => response.json())
     .then(data => {
-        // Assign product data to the global variable products
-        products = data.products;
+        products = data.products; // Assign product data to the global variable products
 
-        // Initialize selected product index and load first product
-        loadProductInfo(selectedProductIndex);        
+        loadProductInfo(selectedProductIndex); // Initialize selected product index and load first product  
+        getTwoRandomProducts(products);    
     })
     .catch(error => console.error('Error loading product data:', error));
     
@@ -37,17 +36,25 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         document.getElementById('addToBasketBtn').addEventListener('click', function() {
-            if (selectedProductIndex === undefined) {
-                selectedProductIndex = firstItemId;
-            }
+            if (selectedProductIndex === undefined) selectedProductIndex = firstItemId;
 
             // Call a function to add the product to the basket, passing the selected product ID as a parameter
-            addItemToBasket(selectedProductIndex);
+            addItemToBasket([selectedProductIndex]);
             
+        });
+
+        document.getElementById('addAllThreeToBasketBtn').addEventListener('click', function() {
+            if (selectedProductIndex === undefined) selectedProductIndex = firstItemId;
+
+            var secondItem = parseInt(document.querySelector('.secondProduct').id);
+            var thirdItem = parseInt(document.querySelector('.thirdProduct').id);
+
+            selectedProductIndex = [selectedProductIndex, secondItem, thirdItem];
+
+            addItemToBasket(selectedProductIndex);
         });
     }
 });
-
 
 // Function to load product information based on selected product index
 function loadProductInfo(selectedProductIndex) {
@@ -74,103 +81,63 @@ function loadProductInfo(selectedProductIndex) {
             document.getElementById('productPrice').innerHTML = `WAS: £${selectedProduct.price.toFixed(2)}`;
             document.getElementById('productPriceNow').innerHTML = `NOW: £${(selectedProduct.price * 0.8).toFixed(2)}`;
         }
-        else{
-            document.getElementById('productPrice').innerText = '£' + selectedProduct.price.toFixed(2); // Set Price to 2 Decimal Places           
-        }
-
+        else document.getElementById('productPrice').innerText = '£' + selectedProduct.price.toFixed(2); // Set Price to 2 Decimal Places           
 
         document.getElementById('howToUse').innerHTML = selectedProduct.howToUse;
         document.getElementById('productPIL').href = selectedProduct.pilLocation;
         document.getElementById('hazardsCautions').innerHTML = selectedProduct.hazardsCautions;
-        
     
         // If product has a 2nd/3rd how to use, display it
-        if (selectedProduct.howToUseTwo != undefined) {
-            document.getElementById('howToUseTwo').innerHTML = selectedProduct.howToUseTwo;
-        }
-        else{
-            document.getElementById('howToUseTwo').innerHTML = "";
-        }
+        if (selectedProduct.howToUseTwo != undefined) document.getElementById('howToUseTwo').innerHTML = selectedProduct.howToUseTwo;
+        else document.getElementById('howToUseTwo').innerHTML = "";
     
-        if(selectedProduct.howToUseThree != undefined) {
-            document.getElementById('howToUseThree').innerHTML = selectedProduct.howToUseThree;
-        }
-        else{
-            document.getElementById('howToUseThree').innerHTML = "";
-        }
+        if(selectedProduct.howToUseThree != undefined) document.getElementById('howToUseThree').innerHTML = selectedProduct.howToUseThree;
+        else document.getElementById('howToUseThree').innerHTML = "";
+    
+        // Update FBT Section 'Initial Product' Image
+        document.querySelector('.initialProduct').src = selectedProduct.imageLocation;
     }
 }
 
-function addItemToBasket() {
+function addItemToBasket(selectedProductIndex) {
     // Retrieve current basket items from local storage or initialize an empty array
     let basketItems = JSON.parse(localStorage.getItem('basket')) || [];
 
     // Setting the Item to Add as the 'selectedProductIndex'
-    let item = selectedProductIndex; 
-    item = parseInt(item);
+    for (let i = 0; i < selectedProductIndex.length; i++){
+        let item = selectedProductIndex[i]; 
+        item = parseInt(item);
 
-    // Set Number of Ibuprofen/Paracetamol Products Found to 0
-    var ibuprofenProductsFound = 0;
-    var paracetamolProductsFound = 0;
-
-    if (ibuprofenContaining.includes(item)){
-        for (let i = 0; i < basketItems.length; i++){
-            if (ibuprofenContaining.includes(basketItems[i])){
-                ibuprofenProductsFound++;
-                if (ibuprofenProductsFound >= 2){
-                    alert("You cannot add more than two Ibuprofen products to your basket.");
-                    return;
-                }  
-            }
-        }
-    }  
+        // Set Number of Ibuprofen/Paracetamol Products Found to 0
+        var ibuprofenProductsFound = 0;
+        var paracetamolProductsFound = 0;
     
-    if (paracetamolContaining.includes(item)){
-        for (let i = 0; i < basketItems.length; i++){
-            if (paracetamolContaining.includes(basketItems[i])){
-                paracetamolProductsFound++;
-                if (paracetamolProductsFound >= 2){
-                    alert("You cannot add more than two Paracetamol products to your basket.");
-                    return;
-                }  
+        if (ibuprofenContaining.includes(item)){
+            for (let i = 0; i < basketItems.length; i++){
+                if (ibuprofenContaining.includes(basketItems[i])){
+                    ibuprofenProductsFound++;
+                    if (ibuprofenProductsFound >= 2) alert("You cannot add more than two Ibuprofen products to your basket."); return;  
+                }
             }
-        }
-    }  
+        }  
+        
+        if (paracetamolContaining.includes(item)){
+            for (let i = 0; i < basketItems.length; i++){
+                if (paracetamolContaining.includes(basketItems[i])){
+                    paracetamolProductsFound++;
+                    if (paracetamolProductsFound >= 2) alert("You cannot add more than two Paracetamol products to your basket."); return;
+                }
+            }
+        }  
+    
+        // Update Basket --> Adds index of selected product to the basket
+        basketItems.push(item);
+    
+        // Store the updated basket in local storage
+        alert(`Added ${products[item].name} to your basket!`)
+    }
 
-    // Update Basket --> Adds index of selected product to the basket
-    basketItems.push(item);
-
-    // Store the updated basket in local storage
     localStorage.setItem('basket', JSON.stringify(basketItems));
-    alert(`Added ${selectedProduct.name} to your basket!`)
-}
-
-function displayOrderSummary(){
-    selectedProductIndex = getItemIndex();
-    var standardDelivery = 5.99;
-    var itemPrice = document.querySelector('.totalItemPrice');
-    var deliveryFee = document.querySelector('.deliveryFee');
-    
-    if (Array.isArray(selectedProductIndex) && selectedProductIndex.length > 0) {
-        for (let i = 0; i < selectedProductIndex.length; i++) {
-            selectedProduct = products[selectedProductIndex[i]]; // Get the selected product
-            totalPrice = totalPrice + (parseFloat(selectedProduct.price));
-        }
-    }
-
-    itemPrice.innerHTML = `Items: £${totalPrice.toFixed(2)}`;
-    deliveryFee.innerHTML = `Delivery Fee: £${standardDelivery}`;
-
-    if (totalPrice > 15){
-        var promotionApplied = document.createElement('h5');
-        promotionApplied.className = 'mt-3'
-        promotionApplied.innerHTML = `Promotion Applied: -£${standardDelivery}`
-        deliveryFee.appendChild(promotionApplied);
-    }
-    else totalPrice += standardDelivery;
-    
-    var orderTotal = document.querySelector('.orderTotal');
-    orderTotal.innerHTML = `Order Total: £${totalPrice.toFixed(2)}`;
 }
 
 function displayProductsInBasket() {
@@ -218,12 +185,8 @@ function displayProductsInBasket() {
             // PRODUCT IMAGE --> Creating Image inside of Div
             var target = document.querySelector(`.${imageColumn}`);
             var newImg = document.createElement('img');
-            if ((selectedProduct.name).includes("Capsules")){
-                newImg.className = 'productImageLarge';
-            }
-            else{
-                newImg.className = 'productImage';
-            }
+            if ((selectedProduct.name).includes("Capsules")) newImg.className = 'productImageLarge';
+            else newImg.className = 'productImage';
             newImg.src = selectedProduct.imageLocation;
             target.appendChild(newImg);
 
@@ -259,13 +222,7 @@ function displayProductsInBasket() {
         var subtotalDiv = document.createElement('div');
         subtotalDiv.className = 'container-fluid subtotalContainer';
         target.parentNode.insertBefore(subtotalDiv, target.nextSibling);
-
-        // TODO: NEED TO DISPLAY THIS CHANGE TO THE USER INDICATING IT WORKS
-        if (totalPrice > 25.0){
-            totalPrice -= 10;
-        }
-        // TODO: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+        
         // Add Subtotal Heading + Value
         var subtotalHeading = document.createElement('h5');
         subtotalHeading.className = 'normalFont';
@@ -285,19 +242,79 @@ function displayProductsInBasket() {
         // Displays if user has Zero(0) Products in Basket
         var target = document.querySelector('#productHeader');
         var h2 = document.createElement('h2');
-        h2.classList.add('text-center', 'mt-5');
+        h2.className = 'text-center noItems';
+        h2.style.marginTop = '6rem';
         h2.textContent = "You currently have no items in your basket.";
         target.parentNode.insertBefore(h2, target.nextSibling);
     }
-
-    // If < 2 Products in Basket, Footer is Fixed to Bottom
-    if (selectedProductIndex.length < 2) footer = document.querySelector('footer'); footer.style.position = 'fixed';
 }
 
-function getItemIndex() {
-    var itemIndex = localStorage.getItem("basket");
+function displayOrderSummary(){
+    selectedProductIndex = getItemIndex();
+    var standardDelivery = 5.99;
+    var itemPrice = document.querySelector('.totalItemPrice');
+    var deliveryFee = document.querySelector('.deliveryFee');
+    
+    // Get Total Price for Items in Basket
+    if (Array.isArray(selectedProductIndex) && selectedProductIndex.length > 0) {
+        for (let i = 0; i < selectedProductIndex.length; i++) {
+            selectedProduct = products[selectedProductIndex[i]]; // Get the selected product
+            totalPrice = totalPrice + (parseFloat(selectedProduct.price));
+        }
+    }
 
-    return JSON.parse(itemIndex); // Parse JSON String --> Arr
+    itemPrice.innerHTML = `Items: £${totalPrice.toFixed(2)}`;
+    deliveryFee.innerHTML = `Delivery Fee: £${standardDelivery}`;
+
+    if (totalPrice > 15){
+        var promotionApplied = document.createElement('h5');
+        promotionApplied.className = 'mt-3'
+        promotionApplied.innerHTML = `Promotion #2 Applied: -£${standardDelivery}`
+        deliveryFee.appendChild(promotionApplied);
+    }
+    else totalPrice += standardDelivery;
+
+    // Special Offer #3 //
+    if (totalPrice > 25.0){
+        totalPrice -= 10;
+
+        // Create New HTML Heading for New Promotion Applied
+        var promotionApplied = document.createElement('h5');
+        promotionApplied.className = 'mt-3'
+        promotionApplied.innerHTML = 'Promotion #3 Applied: -£10.00';
+        deliveryFee.appendChild(promotionApplied);
+    }
+    
+    var orderTotal = document.querySelector('.orderTotal');
+    orderTotal.innerHTML = `Order Total: £${totalPrice.toFixed(2)}`;
+}
+
+function getTwoRandomProducts(products) {
+    var [randomIndexOne, randomIndexTwo] = [0, 0];
+    var productIDs = [];
+
+    // Filter Products for Lemsip, Strepsils, Nurofen
+    var productsForRandom = products.filter(product => product.brand === "lemsip" || product.brand === "strepsils" || product.brand === "nurofen");
+    for (i = 0; i < productsForRandom.length; i++) productIDs.push(parseInt((productsForRandom[i].id) - 1));
+
+    selectedProductIndex = document.querySelector('#productOption .dropdown-item').id;
+
+    while (randomIndexOne == randomIndexTwo || randomIndexOne == selectedProductIndex || randomIndexTwo == selectedProductIndex) {
+        var randomIndexOne = productIDs[Math.floor(Math.random()*productIDs.length)];
+        var randomIndexTwo = productIDs[Math.floor(Math.random()*productIDs.length)];
+    }
+
+    while (products[randomIndexOne].brand == "lemsip" && products[randomIndexTwo].brand == "lemsip" || products[randomIndexOne].brand == "nurofen" && products[randomIndexTwo].brand == "nurofen"){        
+        randomIndexTwo = productIDs[Math.floor(Math.random()*productIDs.length)];
+    }
+
+    document.querySelector('.secondProduct').id = randomIndexOne;
+    document.querySelector('.thirdProduct').id = randomIndexTwo;
+
+    document.querySelector('.secondProduct').src = products[randomIndexOne].imageLocation;
+    document.querySelector('.thirdProduct').src = products[randomIndexTwo].imageLocation;
+
+    document.querySelector('.totalPriceForThree').innerHTML = `Total Price: £${(products[randomIndexOne].price + products[randomIndexTwo].price).toFixed(2)}`;
 }
 
 function removeParentElement() {
@@ -320,4 +337,10 @@ function removeParentElement() {
     parentElement.parentNode.removeChild(parentElement); // Remove It
 
     window.location.reload(); // Reload the page to reflect the changes
+}
+
+function getItemIndex() {
+    var itemIndex = localStorage.getItem("basket");
+
+    return JSON.parse(itemIndex); // Parse JSON String --> Arr
 }
