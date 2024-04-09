@@ -37,7 +37,7 @@
                     </li> 
                     <!-- About Us Nav -->
                     <li class="nav-item">
-                        <a class="nav-link active m-2" href="/about.html" style="text-decoration: none;">
+                        <a class="nav-link active m-2" href="https://reckitt.com/our-company/" target="_blank" style="text-decoration: none;">
                             <i class="fa-solid fa-circle-info" style="font-size: 30px;" id="navButton"></i>
                         </a>
                     </li>
@@ -63,7 +63,7 @@
     
 
     <!-- Footer -->
-    <footer class="mt-5">
+    <footer class="changingFooter mt-5">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-5">
@@ -91,5 +91,25 @@
             </div>
         </div>
     </footer>
+    <script>
+        selectedProductIndex = getItemIndex();
+        var remNeeded = 0;
+        var screenWidth = window.innerWidth;
+
+        if (selectedProductIndex){                
+            footer = document.querySelector('.changingFooter');
+            footer.style.bottom = '0';
+            
+            if (selectedProductIndex.length > 2){
+                footer.style.position = 'inherit';
+                remNeeded = `${5 * (selectedProductIndex.length)}`;
+                footer.style.top = `${remNeeded}rem`;
+            } 
+            else{
+                if (screenWidth <= 768) footer.style.position = 'inherit';   
+                else footer.style.position = 'fixed';
+            }
+        }
+    </script>
 </body>
 </html>

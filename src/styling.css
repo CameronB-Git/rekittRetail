@@ -1,5 +1,17 @@
 @charset "utf-8";
 
+/* Variables */
+:root {
+    --font-size-small: 18px;
+    --font-size-medium: 22px;
+    --font-size-large: 28px;
+    --hoverColor: #ff5db1;
+    --navBGColor: #F987C2;
+    --navBtnColor: #a90041;
+    --reckittPink: #E95EA6;
+    --darkColor: #212529;
+}
+
 /* Setting Fonts */
 @font-face {
     font-family: UbuntoMono-Bold;
@@ -22,191 +34,115 @@ p, a, label, button, input, ul, li, h5, h6 {
 }
 
 /* Nav Related Classes */
-nav{
-    background-color: #F987C2;
-}
+nav{background-color: var(--navBGColor);}
+#navButton{color: var(--navBtnColor);}
+.orderTotal{color: var(--reckittPink);}
+ul.navbar-nav{font-size: var(--font-size-small);}
+#selectedButton, .darkText{color: var(--darkColor);}
 
-#navButton{
-    color: #a90041
-}
+/* Font Sizes */
+.fontSize-small {font-size: var(--font-size-small);}
+.fontSize-medium {font-size: var(--font-size-medium);}
+.fontSize-large {font-size: var(--font-size-large);}
 
-
-
-
-ul.navbar-nav{
-    font-size: 18px;
-}
-
-#selectedButton, .darkText{
-    color: #212529;
-}
-
-/* !! Font Sizes !! */
-:root {
-    --font-size-small: 18px;
-    --font-size-medium: 22px;
-    --font-size-large: 28px;
-    --hoverColor: #ff5db1;
-}
-  
-.fontSize-small {
-    font-size: var(--font-size-small);
-}
-
-.fontSize-medium {
-    font-size: var(--font-size-medium);
-}
-
-.fontSize-large {
-    font-size: var(--font-size-large);
-}
-
+/* Button Styling (Call-To-Action) */
 .buttonTemplate{
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 0.6rem;
-    border-width: 0.1rem;
-    border-color: black;
-    background-color: #E95EA6;
-    color: black;
+    width: 10rem; height: 2.5rem; border-radius: 0.6rem; border-width: 0.1rem; 
+    border-color: black; background-color: var(--reckittPink); color: black;
 }
+.buttonTemplateWider{width: 12rem;}
 
-.mt-10{
-    margin-top: 10%;
-}
-
-.floatRight{
-    float: right;
-}
-
+/* Custom Margin Classes */
+.mt-10{margin-top: 10%;}
+.ms-5rem{margin-left: 14rem;}
+.floatRight{float: right;}
 
 /* Containers */
 .brandContainer {
-    width: 15rem;
-    height: 10rem;
-    border: 1px solid black;
-
-    margin-top: 35px;
-    border-radius: 1rem;
-    margin: 30px;
+    width: 15rem; height: 10rem;
+    margin-top: 35px; margin: 30px;
+    border: 1px solid black; border-radius: 1rem;
     justify-content: center;
 }
 
 .productBox {
-    max-width: 50%;
-    height: 150px;
-    border: 1px solid black;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 35px;
-    border-radius: 1.5rem;
+    max-width: 50%; height: 150px;
+    border: 1px solid black; border-radius: 1.5rem;
+    padding-top: 15px; padding-bottom: 15px; margin-top: 35px;
 }
 
 .subtotalContainer{
-    min-width: 15%;
-    max-width: 12%;
-    margin-top: 3rem;
+    min-width: 15%; max-width: 12%;
+    margin-top: 3rem; margin-right: 22.5rem;   
     border-radius: 1rem;
-    margin-right: 22.5rem;   
 }
 
 .specialOffersContainer{
-    max-width: 60%;
-    height: 15rem;
-    border: 1px solid black;
-    border-radius: 1.5rem;
+    max-width: 60%; height: 15rem;
+    border: 1px solid black; border-radius: 1.5rem;
 }
 
 .offerContainer{
-    max-width: 85%;
-    height: 2rem; 
+    max-width: 85%; height: 2rem; 
     border: 0.08rem solid black;
+    background-color: var(--navBGColor); color: #212529;
     margin-right: 2.5rem;
-    background-color: #F987C2;
-    color: #212529;
 }
 
-.noTextDecor:hover{
-    color: var(--hoverColor);
-}
+/* Hover Effects */
+.noTextDecor:hover{color: var(--hoverColor);}
 
 /* Dark/Light Mode */
-[data-bs-theme='dark'] .productBox,
-[data-bs-theme='dark'] .brandContainer,
-[data-bs-theme='dark'] .specialOffersContainer, 
-[data-bs-theme='dark'] .offerContainer{ 
+[data-bs-theme='dark'] .productBox, [data-bs-theme='dark'] .brandContainer, [data-bs-theme='dark'] .specialOffersContainer, [data-bs-theme='dark'] .offerContainer{ /* Dark Mode: Container Borders */
     border-color: white;
 }
 
-[data-bs-theme='dark'] footer{
-    background-color: #32373b;
-}
+[data-bs-theme='dark'] footer{background-color: #32373b;} /* Dark Mode: Footer */
 
-[data-bs-theme='dark'] .btn-info{
-    background-color: #212529;
+[data-bs-theme='dark'] .btn-info{color: #ffffff;} /* Dark Mode: Button (Checkout) */
+
+[data-bs-theme='dark'] .dropup, [data-bs-theme='dark'] .quickLinks a, [data-bs-theme='dark'] .socialLinks i{ /* Dark Mode: Drop-up Menu + Footer Links */
     color: #ffffff;
 }
 
-[data-bs-theme='dark'] .dropup,
-[data-bs-theme='dark'] .quickLinks a,
-[data-bs-theme='dark'] .socialLinks i{
-    color: #ffffff;
-}
-
-[data-bs-theme='dark'] .quickLinks a:hover,
-[data-be-theme='dark'] .socialLinks a:hover{
+[data-bs-theme='dark'] .quickLinks a:hover, [data-be-theme='dark'] .socialLinks a:hover{ /* Dark Mode: Footer Links Hover */
     color: var(--hoverColor);   
 }
 
-
- 
 /* Checkout Page */
 .required-asterisk {
     color: red;
-    margin-left: 4px; /* Add spacing between label and asterisk if needed */
+    margin-left: 4px; 
 }
 
 /* Sets Styling for Input Fields */
 input.form-control{
-    width: 100%; /* Change width to 100% to span across the container */
+    width: 100%; 
     margin-top: 5px;
-    border-width: 0 0 0.1rem;
-    border-color: #F987C2;
-    border-radius: 0px;
+    border-width: 0 0 0.1rem; border-color: var(--navBGColor); border-radius: 0px;
 }
 
 input.form-control:focus{
-    border-color: #ff5db1;
-    box-shadow: 0 0 0 0.01rem #ff5db1;
-    border-radius: 4px;
-}
-
-label.form-control{
-    margin-bottom: 0px;
+    border-color: var(--hoverColor); box-shadow: 0 0 0 0.01rem var(--hoverColor); border-radius: 4px;
 }
 
 .btn-info{
-    background: transparent;
-    border-color: #ff5db1 ;
-    align-items: center;
     width: 50%;
-    letter-spacing: 0.1rem;
-    transition: all 0.2s ease-in-out;
-    text-align: center;
+    background: transparent;
+    border-color: var(--hoverColor);
+    align-items: center; text-align: center;
+    letter-spacing: 0.1rem; transition: all 0.2s ease-in-out;
 }
 
 .btn-info:hover{
     transform: scale(1.02);
-    background-color: #FF8552;
-    color: #ffffff;
+    /* TODO: NEED to Change Accent Colour (To fit with Reckitt) */
+    background-color: #FF8552; color: #ffffff;
 }
 
 /* General Classes */
 /* Sets the Auto Margin Feature */
-.mx-auto {
-    margin-left: auto;  
-    margin-right: auto;
-}
+.mx-auto {margin-left: auto; margin-right: auto;}
 
 /* Makes Dropdown Menu Work */
 .dropdown:hover>.dropdown-menu {
@@ -222,10 +158,8 @@ label.form-control{
 
 .dropup{
     width: 10rem;
-    border-radius: 0.4rem;
-    border-color: #F987C2;
-    background-color: transparent;
-    color: black;   
+    border-radius: 0.4rem; border-color: var(--navBGColor);
+    background-color: transparent; color: black;   
 }
 
 /* Makes Dropdown Hoverable */
@@ -238,62 +172,37 @@ label.form-control{
     margin-top: 7%;
 }
 
-.productName{
-    font-size: 24px;
-    vertical-align: top;
-}
-
 .productPrice{
     float:right;
-    margin-top: 4.5rem;
-    margin-right: 0.75rem;
+    margin-top: 4.5rem; margin-right: 0.75rem;
     bottom: 0px;
 }
 
-#productContainer{
-    width: 60%
-}
+#productContainer{width: 60%;}
 
-div.col-md-10, div.col-md-9 {
-    padding: 0px;
-}
+div.col-md-10, div.col-md-9 {padding: 0px;}
     
-.brandImage{
-    width: 12rem;
-}
-
-.optrexImage{
-    width: 9.5rem;
-}
-
-.productImage{
-    width: 6.25rem;
-}
-
-.productImageLarge{
-    width: 9rem;
-}
+.brandImage{width: 12rem;}
+.optrexImage{width: 9.5rem;}
+.productImage{width: 6.25rem;}
+.productImageLarge{width: 9rem;}
 
 /* No Text Decoration */
 .noTextDecor{
     text-decoration: none;
-    color: #212529;
+    color: var(--darkColor);
 }
 
 /* CSS for Footer */
 footer{
-    width: 100%;
-    height: 15rem;
+    width: 100%; height: 15rem;
     background-color: #efefef;
     bottom: 0px;
-    position: relative;
 }
 
 .footerLogo{
     min-width: 10%;
-    margin-left: 5.5rem;
-    margin-top: 2rem;
-
+    margin-left: 5.5rem; margin-top: 2rem;
 }
 
 .copyrightStatement{
@@ -301,95 +210,87 @@ footer{
     margin-left: 2.3rem;
 }
 
-.quickLinks{
-    margin-top: 5rem;
+.quickLinks{margin-top: 5rem;}
+.socialLinks{margin-top: 5.5rem;}
+
+form label{margin-top: 0.8rem;}
+
+/* FBT Section */
+.fbtItems {
+    display: flex;
+    flex-direction: column; align-items: center;
 }
 
-.socialLinks{
-    margin-top: 5.5rem;
+.fbtContainer {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; align-items: center;
 }
 
-form label{
-    margin-top: 0.8rem;
+.fbtItem {
+    margin: 0 10px;
+    display: flex; align-items: center;
 }
 
+.pricingSection{margin-left: 15rem;}
 
-/* Testing Classes */
-    /* !!! Currently Empty !!! */
+.fbtItem:not(:last-child) {margin-bottom: 20px;}
 
 /* Media query: Max Width 768px (Mobile Screens) */
 @media (max-width: 768px) {
-    #preSpacing{
-        display: none;
-    }
+    #preSpacing{display: none;}
     
-    .brandContainer{
-        margin-right: 10%;
-    }
+    .brandContainer{margin-right: 10%;}
     
     .productBox {
-        max-width: 85%;
-        height: 200px;
-        border: 1px solid black;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        margin-top: 35px;
-        border-radius: 1.5rem;
+        max-width: 85%; height: 200px;
+        border: 1px solid black; border-radius: 1.5rem;
+        padding-top: 15px; padding-bottom: 15px; margin-top: 3.5rem;
     }
     
     .productImage{
-        width: 4rem;
-        min-width: 1rem;
+        width: 4rem; min-width: 1rem;
     }
 
     .productImageLarge{
-        width: 8rem;
-        min-width: 1rem;
+        width: 8rem; min-width: 1rem;
     }
 
-    .productName{
-        font-size: 18px;
-
-    }
-
-    .subtotalContainer{
-        margin-right: 10rem;
-    }
-
-    .productPrice{
-        margin-top: 2.5rem;
-    }
+    .subtotalContainer{margin-right: 10rem;}
 
     /* CSS for Footer */
     footer{
-        width: 100%;
-        height: 35rem;
+        width: 100%; height: 35rem;
         background-color: #efefef;
-        bottom: 0px;
+        top: 35rem;
+    }
+
+    .changingFooter{
+        width: 100%; height: 35rem;
+        top: 20rem; bottom: 0;
+        position: absolute;
     }
 
     .footerLogo{
         min-width: 10%;
-        margin-left: 5.5rem;
-        margin-top: 1rem;
+        margin-left: 5.5rem; margin-top: 1rem;
     }
 
     .copyrightStatement{
-        margin-left: 2.75rem;
         max-width: 15rem;
+        margin-left: 2.75rem;
     }
 
-    .quickLinks{
-        margin-top: 2.5rem;
-    }
-    
-    .socialLinks{
-        margin-top: 4rem;
-    }
+    .quickLinks{margin-top: 2.5rem;}
+    .socialLinks{margin-top: 4rem;}
 
     .specialOffersContainer{
         max-width: 85%;
         height: 17.5rem;
+    }
+
+    .noItems{
+        max-width: 90%;
+        margin-left: 1rem;
     }
     
     .offerContainer{
@@ -397,36 +298,28 @@ form label{
         margin-left: 0.5rem;
     }
 
-    .specialOffersContainer .row{
-        margin-top: 1.75rem !important;
-    }
+    .specialOffersContainer .row{margin-top: 1.75rem !important;}
 
-    .fontSize-medium{
-        font-size: 18px;
-    }
+    h4{margin-top: 0.25rem;}
 
-    .fontSize-large{
-        font-size: 22px;
-    }
+    .paydayDeals{margin-top: 0.5rem;}
 
-    h4{
-        margin-top: 0.25rem;
-    }
-
-    .paydayDeals{
-       margin-top: 0.5rem; 
-    }
-
-    form label{
-        margin-top: 1.75rem;
-    }
+    form label{margin-top: 1.75rem;}
 
     /* Makes Dropdown Menu Responsive to Mobile Devices */
     .dropdown-menu {
-        max-height: 200px; /* Set a maximum height for the dropdown menu */
-        max-width: 100%;
+        max-height: 200px; max-width: 100%;
         overflow-y: auto; /* Enable vertical scrolling */
     }
+
+    /* FBT Section */
+    .fbtContainer {flex-direction: column; align-items: center;}
+    .pricingSection{margin-left: 1rem;}
+    .fbtHeading{
+        margin-right: 3.5rem;
+        text-align: center;
+    }
+
 }
 
 /* Media Queries */
@@ -437,14 +330,19 @@ form label{
         position: absolute;
         left: 4rem; right: 0;
     }
+
+    .changingFooter{
+        width: 100%;
+        bottom: 0;
+        position: inherit;
+    }
 }
 
 /* Media query to remove centering on small screens */
 @media (max-width: 992px) {
     img{
+        max-width: 85%; min-width: 73%;
         display: block;
-        min-width: 73%;
-        max-width: 85%;
         margin: auto;
     }
 
@@ -453,18 +351,14 @@ form label{
         margin-top: 25%;
     }
 
-    .productDetails{
-        margin-top: 20%;
-    }
+    .productDetails{margin-top: 20%;}
     
     .productInformation *{
         width: 85%;
         font-size: 20px;
     }
 
-    .brandRow{
-        margin-left: 2rem;
-    }
+    .brandRow{margin-left: 2rem;}
 }
 
 @media (min-width: 993px){
@@ -473,11 +367,7 @@ form label{
         font-size: 20px;
     }
 
-    .productInformation.ul{
-        width: 80%;
-    }
+    .productInformation.ul{width: 80%;}
 
-    .brandRow{
-        margin-left: 12rem;
-    }
+    .brandRow{margin-left: 12rem;}
 }

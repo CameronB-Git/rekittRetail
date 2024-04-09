@@ -327,7 +327,8 @@
             "price": 5.99,
             "imageLocation": "/Assets/medicationAssets/Strepsils/strepsilsProducts/strepsilsStrawberrySugarFreeLozengesx36.png",
             "pilLocation": "/Assets/medicationAssets/Strepsils/strepsilsPILs/strepsilsStrawberrySugarFreeLozengesx36_PIL.pdf",
-            "howToUse": "<b>Adults and children over 6 years:</b> Dissolve one lozenge slowly in the mouth every 2 to 3 hours. No more than 12 lozenges per day. Do not exceed the stated dose.",            "hazardsCautions": "Remember young children can choke on lozenges. If you are allergic to any of the ingredients do not use this product. This product contains isomaltitol and maltitol syrup which may have a mild laxative effect if several are taken a day. Please see the <a href=#productPIL>Patient Information Leaflet</a> for further information.",
+            "howToUse": "<b>Adults and children over 6 years:</b> Dissolve one lozenge slowly in the mouth every 2 to 3 hours. No more than 12 lozenges per day. Do not exceed the stated dose.",           
+            "hazardsCautions": "Remember young children can choke on lozenges. If you are allergic to any of the ingredients do not use this product. This product contains isomaltitol and maltitol syrup which may have a mild laxative effect if several are taken a day. Please see the <a href=#productPIL>Patient Information Leaflet</a> for further information.",
             "maxQuantity": 10
         },
         {

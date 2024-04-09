@@ -37,7 +37,7 @@
                     </li> 
                     <!-- About Us Nav -->
                     <li class="nav-item">
-                        <a class="nav-link active m-2" href="/about.html" style="text-decoration: none;">
+                        <a class="nav-link active m-2" href="https://reckitt.com/our-company/" target="_blank" style="text-decoration: none;">
                             <i class="fa-solid fa-circle-info" style="font-size: 30px;" id="navButton"></i>
                         </a>
                     </li>
@@ -56,10 +56,13 @@
         </div>
     </nav>
 
+    <br><br><br>
+
     <h1 class="mt-10 pt-3 text-center">Thank you for your purchase!</h1>
-,   <h3 class="mt-2 text-center">Your order will be with you in due course.</h3>
+    <h3 class="mt-5 text-center">Your order will be with you in due course.</h3>
+
     <!-- Footer -->
-    <footer class="mt-5" style="position: fixed; bottom: 0px;">
+    <footer class="changingFooter mt-5">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-5">
@@ -87,5 +90,15 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        var screenWidth = window.innerWidth;
+       
+        footer = document.querySelector('.changingFooter');
+        footer.style.bottom = '0';
+
+        if (screenWidth <= 768) footer.style.position = 'inherit';   
+        else footer.style.position = 'fixed';
+    </script>
 </body>
 </html>
