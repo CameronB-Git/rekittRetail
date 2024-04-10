@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(response => response.json())
     .then(data => {
         products = data.products; // Assign product data to the global variable products
-
-        loadProductInfo(selectedProductIndex); // Initialize selected product index and load first product  
-        getTwoRandomProducts(products);    
+        var url = window.location.pathname;
+        var filename = url.substring(url.lastIndexOf('/')+1);
+        loadProductInfo(selectedProductIndex); // Initialize selected product index and load first product
+        if (filename == "basket.html") displayProductsInBasket(); 
+        if (unNeededPages.includes(filename) == false) getTwoRandomProducts(products);
     })
     .catch(error => console.error('Error loading product data:', error));
     
@@ -93,6 +95,9 @@ function loadProductInfo(selectedProductIndex) {
     
         if(selectedProduct.howToUseThree != undefined) document.getElementById('howToUseThree').innerHTML = selectedProduct.howToUseThree;
         else document.getElementById('howToUseThree').innerHTML = "";
+
+        // Update Active Ingredients
+        document.querySelector('.activeIngredient').textContent = selectedProduct.activeIngredients;
     
         // Update FBT Section 'Initial Product' Image
         document.querySelector('.initialProduct').src = selectedProduct.imageLocation;
@@ -102,9 +107,12 @@ function loadProductInfo(selectedProductIndex) {
 function addItemToBasket(selectedProductIndex) {
     // Retrieve current basket items from local storage or initialize an empty array
     let basketItems = JSON.parse(localStorage.getItem('basket')) || [];
+    console.log(basketItems);
 
     // Setting the Item to Add as the 'selectedProductIndex'
     for (let i = 0; i < selectedProductIndex.length; i++){
+        console.log(selectedProductIndex);
+        console.log(selectedProductIndex[i]);
         let item = selectedProductIndex[i]; 
         item = parseInt(item);
 
@@ -116,7 +124,7 @@ function addItemToBasket(selectedProductIndex) {
             for (let i = 0; i < basketItems.length; i++){
                 if (ibuprofenContaining.includes(basketItems[i])){
                     ibuprofenProductsFound++;
-                    if (ibuprofenProductsFound >= 2) alert("You cannot add more than two Ibuprofen products to your basket."); return;  
+                    if (ibuprofenProductsFound >= 2) {alert("You cannot add more than two Ibuprofen products to your basket."); return;}  
                 }
             }
         }  
@@ -125,7 +133,7 @@ function addItemToBasket(selectedProductIndex) {
             for (let i = 0; i < basketItems.length; i++){
                 if (paracetamolContaining.includes(basketItems[i])){
                     paracetamolProductsFound++;
-                    if (paracetamolProductsFound >= 2) alert("You cannot add more than two Paracetamol products to your basket."); return;
+                    if (paracetamolProductsFound >= 2) {alert("You cannot add more than two Paracetamol products to your basket."); return;}
                 }
             }
         }  
@@ -136,7 +144,6 @@ function addItemToBasket(selectedProductIndex) {
         // Store the updated basket in local storage
         alert(`Added ${products[item].name} to your basket!`)
     }
-
     localStorage.setItem('basket', JSON.stringify(basketItems));
 }
 
@@ -160,6 +167,8 @@ function displayProductsInBasket() {
             divRow.className = 'row';
             target.appendChild(divRow);
             
+            console.log(products);
+            console.log(products[selectedProductIndex[i]]);
             selectedProduct = products[selectedProductIndex[i]]; // Get the selected product
 
             // Set Column Widths --> Helps with Responsiveness

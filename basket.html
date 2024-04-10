@@ -13,11 +13,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Your Basket | Reckitt</title>
 </head>
-<body onload="loadMode(), displayProductsInBasket()">
+<body onload="loadMode()">
     <nav class="navbar navbar-expand-md fixed-top py-2">
         <div class="container-fluid">
             <div id="name">
-                <a class="navbar-brand text-white mx-auto w-25" href="#">
+                <a class="navbar-brand text-white mx-auto w-25" href="/index.html">
                     <img src="/Assets/reckittLogo.svg" width="50%" style="float:left";>
                 </a>
             </div>
@@ -92,23 +92,21 @@
         </div>
     </footer>
     <script>
-        selectedProductIndex = getItemIndex();
+        selectedProductIndex = getItemIndex() || [];
         var remNeeded = 0;
         var screenWidth = window.innerWidth;
-
-        if (selectedProductIndex){                
-            footer = document.querySelector('.changingFooter');
-            footer.style.bottom = '0';
-            
-            if (selectedProductIndex.length > 2){
-                footer.style.position = 'inherit';
-                remNeeded = `${5 * (selectedProductIndex.length)}`;
-                footer.style.top = `${remNeeded}rem`;
-            } 
-            else{
-                if (screenWidth <= 768) footer.style.position = 'inherit';   
-                else footer.style.position = 'fixed';
-            }
+              
+        footer = document.querySelector('.changingFooter');
+        footer.style.bottom = '0';
+        
+        if (selectedProductIndex.length > 2){
+            footer.style.position = 'inherit';
+            remNeeded = `${5 * (selectedProductIndex.length)}`;
+            footer.style.top = `${remNeeded}rem`;
+        } 
+        else{
+            if (screenWidth <= 768) footer.style.position = 'inherit';   
+            else footer.style.position = 'fixed';
         }
     </script>
 </body>
