@@ -36,9 +36,12 @@ p, a, label, button, input, ul, li, h5, h6 {
 /* Nav Related Classes */
 nav{background-color: var(--navBGColor);}
 #navButton{color: var(--navBtnColor);}
-.orderTotal{color: var(--reckittPink);}
 ul.navbar-nav{font-size: var(--font-size-small);}
 #selectedButton, .darkText{color: var(--darkColor);}
+
+/* Other Colour Stuff */
+.reckittPinkBold{color: var(--reckittPink); font-weight: bold;}
+
 
 /* Font Sizes */
 .fontSize-small {font-size: var(--font-size-small);}
@@ -231,7 +234,7 @@ form label{margin-top: 0.8rem;}
     display: flex; align-items: center;
 }
 
-.pricingSection{margin-left: 15rem;}
+.pricingSection{margin-left: 3.75rem;} 
 
 .fbtItem:not(:last-child) {margin-bottom: 20px;}
 

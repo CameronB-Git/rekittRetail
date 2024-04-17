@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Checkout | Reckitt</title>
 </head>
-<body onload="loadMode()">
+<body>
     <nav class="navbar navbar-expand-md fixed-top py-2">
         <div class="container-fluid">
             <div id="name">
@@ -254,7 +254,6 @@
     <script>
         window.onload = function() {
             loadMode();
-            displayOrderSummary();
             var dropdownMonthItems = document.querySelectorAll('#monthOptions .dropdown-item');
             var dropdownButtonMonths = document.querySelector('#dropdownMenuButtonMonths');
             
@@ -266,7 +265,7 @@
                     dropdownButtonMonths.textContent = this.textContent;
                 });
             });
-
+            
             dropdownYearItems.forEach(function(item) {
                 item.addEventListener('click', function() {
                     dropdownButtonYears.textContent = this.textContent;

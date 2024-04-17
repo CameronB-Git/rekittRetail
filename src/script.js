@@ -6,6 +6,7 @@ let selectedProduct;
 let firstItemId;
 let totalPrice = 0;
 let unNeededPages = ["index.html", "basket.html", "checkout.html", "confirmation.html", "billingInformation.html"];
+let commonPages = ["lemsip.html", "nurofen.html", "strepsils.html"];
 let ibuprofenContaining = [9, 10, 11, 12, 13];
 let paracetamolContaining = [14, 15, 16, 17, 18];
 
@@ -17,9 +18,10 @@ document.addEventListener("DOMContentLoaded", function() {
         products = data.products; // Assign product data to the global variable products
         var url = window.location.pathname;
         var filename = url.substring(url.lastIndexOf('/')+1);
+        if (filename == "billingInformation.html") displayOrderSummary();
         loadProductInfo(selectedProductIndex); // Initialize selected product index and load first product
         if (filename == "basket.html") displayProductsInBasket(); 
-        if (unNeededPages.includes(filename) == false) getTwoRandomProducts(products);
+        if (commonPages.includes(filename)) getTwoRandomProducts(products);
     })
     .catch(error => console.error('Error loading product data:', error));
     
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
         });
 
+        if (commonPages.includes(filename)) {
         document.getElementById('addAllThreeToBasketBtn').addEventListener('click', function() {
             if (selectedProductIndex === undefined) selectedProductIndex = firstItemId;
 
@@ -55,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             addItemToBasket(selectedProductIndex);
         });
+    }
     }
 });
 
@@ -99,20 +103,18 @@ function loadProductInfo(selectedProductIndex) {
         // Update Active Ingredients
         document.querySelector('.activeIngredient').textContent = selectedProduct.activeIngredients;
     
-        // Update FBT Section 'Initial Product' Image
-        document.querySelector('.initialProduct').src = selectedProduct.imageLocation;
+        if (commonPages.includes(filename)){
+            document.querySelector('.initialProduct').src = selectedProduct.imageLocation; // Update FBT Section 'Initial Product' Image
+        }
     }
 }
 
 function addItemToBasket(selectedProductIndex) {
     // Retrieve current basket items from local storage or initialize an empty array
     let basketItems = JSON.parse(localStorage.getItem('basket')) || [];
-    console.log(basketItems);
 
     // Setting the Item to Add as the 'selectedProductIndex'
     for (let i = 0; i < selectedProductIndex.length; i++){
-        console.log(selectedProductIndex);
-        console.log(selectedProductIndex[i]);
         let item = selectedProductIndex[i]; 
         item = parseInt(item);
 
@@ -167,8 +169,6 @@ function displayProductsInBasket() {
             divRow.className = 'row';
             target.appendChild(divRow);
             
-            console.log(products);
-            console.log(products[selectedProductIndex[i]]);
             selectedProduct = products[selectedProductIndex[i]]; // Get the selected product
 
             // Set Column Widths --> Helps with Responsiveness
@@ -263,10 +263,12 @@ function displayOrderSummary(){
     var standardDelivery = 5.99;
     var itemPrice = document.querySelector('.totalItemPrice');
     var deliveryFee = document.querySelector('.deliveryFee');
+    var orderTotal = document.querySelector('.orderTotal');
     
     // Get Total Price for Items in Basket
     if (Array.isArray(selectedProductIndex) && selectedProductIndex.length > 0) {
         for (let i = 0; i < selectedProductIndex.length; i++) {
+            console.log(products);
             selectedProduct = products[selectedProductIndex[i]]; // Get the selected product
             totalPrice = totalPrice + (parseFloat(selectedProduct.price));
         }
@@ -294,8 +296,8 @@ function displayOrderSummary(){
         deliveryFee.appendChild(promotionApplied);
     }
     
-    var orderTotal = document.querySelector('.orderTotal');
-    orderTotal.innerHTML = `Order Total: £${totalPrice.toFixed(2)}`;
+    // orderTotal.innerHTML = `Order Total: £${totalPrice.toFixed(2)}`;
+    orderTotal.innerHTML = `<span class="reckittPinkBold">Order Total:</span> ${totalPrice.toFixed(2)}`;
 }
 
 function getTwoRandomProducts(products) {
