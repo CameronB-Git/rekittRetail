@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-md fixed-top py-2">
         <div class="container-fluid">
             <div id="name">
-                <a class="navbar-brand text-white mx-auto w-25" href="#">
+                <a class="navbar-brand text-white mx-auto w-25" href="/index.html">
                     <img src="/Assets/reckittLogo.svg" width="50%" style="float:left";>
                 </a>
             </div>
@@ -123,11 +123,15 @@
         </div>
 
         <!-- Pricing + Add All Three -->
-        <section class="container mt-5 pricingSection">
-            <h4 class="ms-4 mt-3 totalPriceForThree"></h4>
-            <button class="btn btn-secondary buttonTemplate buttonTemplateWider ms-5" id="addAllThreeToBasketBtn">
-                <b>Add all 3 to Basket</b>
-            </button>
+        <section class="container-fluid mt-5 pricingSection">
+            <div class="row">
+                <div class="offset-md-4 col-md-4">
+                    <h4 class="ms-4 mt-3 totalPriceForThree"></h4>
+                    <button class="btn btn-secondary buttonTemplate buttonTemplateWider ms-5" id="addAllThreeToBasketBtn">
+                        <b>Add all 3 to Basket</b>
+                    </button>
+                </div>
+            </div>
         </section>
     </section>
         
@@ -178,8 +182,7 @@
             <!-- Active Ingredients -->
             <h3>Active Ingredients</h3>
             <ul class="ms-5">
-                <li>Paracetamol 500mg</li>
-                <li>Phenylephrine Hydrochloride 6.1mg</li>
+                <li class="activeIngredient"></li>
             </ul>
             <p class="mb-5">See Patient Information Leaflet below for further details.</p>
 
